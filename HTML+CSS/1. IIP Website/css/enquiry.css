@@ -1,0 +1,63 @@
+:root {
+    --primary-color: #00a8ec;
+    --secondary-color: #ef9c00;
+    --light-dark-color: #343130;
+    --light-color: #f1f0ef;
+    --black: #000;
+    --white: #fff;
+    --text-color: #343130;
+}
+
+/* .main-content__header {
+    display: flex;
+    justify-content: space-between;
+    margin: 15px 50px;
+    color: var(--text-color);
+}
+
+.main-content__header em {
+    color: var(--primary-color);
+} */
+
+.enq-form{
+    margin-left: 60px;
+}
+
+table, th, td{
+    text-align: left;
+}
+table{
+    border-spacing: 25px;
+    color: var(--text-color);
+}
+
+th{
+    color: black;
+    vertical-align: text-top;
+}
+
+tr td:nth-child(2){
+    width: 210px;
+}
+
+textarea{
+    width: 100%;
+    height: 80px;
+    resize: none;
+}
+
+input[type="text"], input[type="email"], input[type="tel"]{
+    height: 40px;
+    width: 100%;
+}
+
+.enq-form button{
+    padding: 8px 15px;
+    background-color: var(--primary-color);
+    color: var(--white);
+    border: 0px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: bolder;
+    cursor: pointer;
+}

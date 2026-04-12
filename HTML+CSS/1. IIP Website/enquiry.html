@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>IIP Academy</title>
+        <link rel="stylesheet" href="css/style.css" />
+        <link rel="stylesheet" href="css/enquiry.css" />
+    </head>
+    <body>
+        <div class="container">
+            <!-- =============== TOP BAR =============== -->
+            <header class="top-bar">
+                <div>
+                    <img src="images/web.png" alt="" />
+                    <a href="www.iipacademy.com">www.iipacademy.com</a>
+                </div>
+                <div>
+                    <img src="images/INFO.png" alt="" />
+                    <a href="mailto:info@iipacademy.com">info@iipacademy.com</a>
+                </div>
+            </header>
+
+            <!-- =================== MAIN HEADER =================== -->
+
+            <header class="main-header">
+                <div class="header__logo">
+                    <img src="images/logo.png" alt="" />
+                </div>
+
+                <nav>
+                    <ul>
+                        <li><a href="home.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="course.html">Courses</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li>
+                            <a class="active" href="enquiry.html">Enquiry</a>
+                        </li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </nav>
+            </header>
+
+            <!-- =================== MAIN CONTENT =================== -->
+            <main>
+                <!-- ====SIDEBAR SECTION + NEWS -->
+                <section class="main-top">
+                    <aside class="main-top__left">
+                        <nav>
+                            <ul>
+                                <li><a href="home.html">Home</a></li>
+                                <li><a href="about.html">About Us</a></li>
+                                <li><a href="course.html">Courses</a></li>
+                                <li><a href="gallery.html">Gallery</a></li>
+                                <li><a href="enquiry.html">Enquiry</a></li>
+                                <li><a href="contact.html">Contact Us</a></li>
+                            </ul>
+                        </nav>
+
+                        <section class="sidebar__news">
+                            <h3>News</h3>
+                            <ul>
+                                <li>
+                                    <img src="images/dot.jpg" alt="" />ipsum
+                                    dolor sit amet,
+                                </li>
+                                <li>
+                                    <img src="images/dot.jpg" alt="" />ipsum
+                                    dolor sit amet,
+                                </li>
+                                <li>
+                                    <img src="images/dot.jpg" alt="" />ipsum
+                                    dolor sit amet,
+                                </li>
+                                <li>
+                                    <img src="images/dot.jpg" alt="" />ipsum
+                                    dolor sit amet,
+                                </li>
+                                <li>
+                                    <img src="images/dot.jpg" alt="" />ipsum
+                                    dolor sit amet,
+                                </li>
+                            </ul>
+                        </section>
+                    </aside>
+                    <div class="main-top__right">
+                        <header class="main-content__header">
+                            <h1>Enquiry:</h1>
+                            <h2><em>Home /</em> Enquiry:</h2>
+                        </header>
+
+                        <section class="enq-form">
+                            <form>
+                                <table>
+                                    <tr>
+                                        <th>Gender:</th>
+                                        <td>
+                                            <input
+                                                type="radio"
+                                                name="gender"
+                                                id="male"
+                                                value="male"
+                                            />
+                                            <label for="male">Male</label>
+                                            <input
+                                                type="radio"
+                                                name="gender"
+                                                id="female"
+                                                value="female"
+                                            />
+                                            <label for="female">Female</label>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>Name:</th>
+                                        <td><input type="text" name="name" id="name"></td>
+                                    </tr>
+                                    <tr>
+                                        <th>Contact No.</th>
+                                        <td><input type="tel" name="contact" id="contact"></td>
+                                    </tr>
+                                    <tr>
+                                        <th>Country:</th>
+                                        <td>
+                                            <select name="" id="">
+                                                <option value="select" >--select--</option>
+                                                <option value="india">India</option>
+                                                <option value="China">China</option>
+                                                <option value="USA">USA</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>State:</th>
+                                        <td>
+                                            <select name="" id="">
+                                                <option value="select" >--select--</option>
+                                                <option value="india">Uttar Pradesh</option>
+                                                <option value="China">Rajasthan</option>
+                                                <option value="USA">Delhi</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>City:</th>
+                                        <td>
+                                            <select name="" id="">
+                                                <option value="select" >--select--</option>
+                                                <option value="india">Gorakhpur</option>
+                                                <option value="China">Noida</option>
+                                                <option value="USA">Jaipur</option>
+                                                <option value="USA">Lucknow</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>Address:</th>
+                                        <td><textarea name="address" id="address"></textarea></td>
+                                    </tr>
+                                    <tr>
+                                        <th>Email:</th>
+                                        <td><input type="email" name="email" id="email"></td>
+                                    </tr>
+                                    <tr>
+                                        <th>Enquiry:</th>
+                                        <td><textarea name="enquiry" id="enquiry"></textarea></td>
+                                    </tr>
+                                    <tr>
+                                        <td><button>Send</button></td>
+                                    </tr>
+                                </table>
+                            </form>
+                        </section>
+                    </div>
+                </section>
+                <section class="main-bottom"></section>
+            </main>
+
+            <!-- =================== FOOTER =================== -->
+            <footer>
+                <section class="footer-top">
+                    <div class="footer-top__content">
+                        <section class="footer__column">
+                            <h4>Quick Links</h4>
+                            <ul>
+                                <li><a href="home.html">Home</a></li>
+                                <li><a href="about.html">About Us</a></li>
+                                <li><a href="course.html">Courses</a></li>
+                                <li><a href="gallery.html">Gallery</a></li>
+                                <li><a href="enquiry.html">Enquiry</a></li>
+                                <li><a href="contact.html">Contact Us</a></li>
+                            </ul>
+                        </section>
+
+                        <section class="footer__column">
+                            <h4>Training</h4>
+                            <ul>
+                                <li>PHP</li>
+                                <li>Advance PHP</li>
+                                <li>Python</li>
+                                <li>Android</li>
+                                <li>Digital Marketing</li>
+                            </ul>
+                        </section>
+
+                        <section class="footer__column">
+                            <h4>&nbsp;</h4>
+                            <ul>
+                                <li>Graphic Design</li>
+                                <li>Search Engine Optimization</li>
+                                <li>Wordpress</li>
+                                <li>Web design</li>
+                                <li>Java</li>
+                            </ul>
+                        </section>
+
+                        <section class="footer__column">
+                            <h4>Contact Info</h4>
+                            <address>
+                                Call At: 9269698122<br /><br />
+                                1st Floor, Laxmi Tower,<br />
+                                Bhaskar Circle,<br />
+                                Ratanada, Raj-<br />
+                                Jodhpur (342001)
+                            </address>
+                            <figure class="social-links">
+                                <ul>
+                                    <li>
+                                        <a
+                                            href="https://www.facebook.com/wscubetech.india"
+                                            ><img src="images/instagram.png"
+                                        /></a>
+                                    </li>
+                                    <li>
+                                        <a
+                                            href="https://www.facebook.com/wscubetech.india"
+                                            ><img src="images/twitter.png"
+                                        /></a>
+                                    </li>
+                                    <li>
+                                        <a
+                                            href="https://www.facebook.com/wscubetech.india"
+                                            ><img src="images/facebook.png"
+                                        /></a>
+                                    </li>
+                                    <li>
+                                        <a
+                                            href="https://www.facebook.com/wscubetech.india"
+                                            ><img src="images/linked-in.png"
+                                        /></a>
+                                    </li>
+                                </ul>
+                            </figure>
+                        </section>
+                    </div>
+                </section>
+                <section class="footer-bottom">
+                    <p>Copyright © 2026</p>
+                </section>
+            </footer>
+        </div>
+    </body>
+</html>

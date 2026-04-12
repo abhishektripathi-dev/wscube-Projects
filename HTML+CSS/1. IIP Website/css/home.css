@@ -1,0 +1,174 @@
+:root {
+    --primary-color: #00a8ec;
+    --secondary-color: #ef9c00;
+    --light-dark-color: #343130;
+    --light-color: #f1f0ef;
+    --black: #000;
+    --white: #fff;
+    --text-color: #343130;
+    /* Course Color */
+    --php-color: #e6611c;
+    --adv-php-color: #5e5da4;
+    --python-color: #7bb1e0;
+    --android-color: #89c222;
+    --digital-marketing-color: #5e5da4;
+    --graphic-design-color: #d70c2a;
+    --seo-color: #308a7c;
+    --wordpress-color: #e6611c;
+}
+
+.main-top__right {
+    margin-right: 20px;
+}
+
+.banner img {
+    display: block;
+    width: 100%;
+    border-bottom: 15px solid var(--light-color);
+}
+
+/* COURSE LIST */
+
+.main-top__right h2 {
+    background-color: var(--light-color);
+    width: 180px;
+    text-align: center;
+    padding: 10px 0px;
+    color: var(--primary-color);
+    font-size: 30px;
+}
+
+.courses {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+}
+
+.course {
+    display: flex;
+    align-items: center;
+    gap: 17px;
+    font-size: 19px;
+    padding: 10px;
+}
+
+.course img {
+    border-radius: 50%;
+}
+
+.course-item__1 {
+    color: var(--php-color);
+}
+
+.course-item__1 img {
+    background-color: var(--php-color);
+}
+
+.course-item__2 {
+    color: var(--adv-php-color);
+}
+.course-item__2 img {
+    background-color: var(--adv-php-color);
+}
+.course-item__3 {
+    color: var(--python-color);
+}
+.course-item__3 img {
+    background-color: var(--python-color);
+}
+.course-item__4 {
+    color: var(--android-color);
+}
+.course-item__4 img {
+    background-color: var(--android-color);
+}
+.course-item__5 {
+    color: var(--digital-marketing-color);
+}
+.course-item__5 img {
+    background-color: var(--digital-marketing-color);
+}
+.course-item__6 {
+    color: var(--graphic-design-color);
+}
+.course-item__6 img {
+    background-color: var(--graphic-design-color);
+}
+.course-item__7 {
+    color: var(--seo-color);
+}
+.course-item__7 img {
+    background-color: var(--seo-color);
+}
+.course-item__8 {
+    color: var(--wordpress-color);
+}
+.course-item__8 img {
+    background-color: var(--wordpress-color);
+}
+
+/* HOW WE WORK Section */
+
+.main-bottom h1 {
+    color: var(--primary-color);
+    text-align: center;
+    margin: 10px 0px;
+}
+
+.work__section {
+    padding: 0px 10px;
+    display: flex;
+    gap: 10px;
+}
+
+.work {
+    width: 25%;
+    height: 220px;
+    display: flex;
+    color: var(--white);
+}
+
+.work div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-shadow: 0px 0px 5px var(--black);
+}
+
+.work_1 {
+    background: url("../images/how/HOW-WE-WORK1.png") no-repeat center bottom;
+}
+
+.work_1 div {
+    width: 100%;
+    height: 100%;
+    background-color: rgb(201, 109, 138, 0.8);
+}
+.work_2 {
+    background: url("../images/how/HOW-WE-WORK2.png") no-repeat center bottom;
+}
+
+.work_2 div {
+    width: 100%;
+    height: 100%;
+    background-color: rgb(237, 114, 141, 0.8);
+}
+
+.work_3 {
+    background: url("../images/how/HOW-WE-WORK3.png") no-repeat center bottom;
+}
+
+.work_3 div {
+    width: 100%;
+    height: 100%;
+    background-color: rgb(241, 160, 96, 0.8);
+}
+.work_4 {
+    background: url("../images/how/HOW-WE-WORK4.png") no-repeat center bottom;
+}
+.work_4 div {
+    width: 100%;
+    height: 100%;
+    background-color: rgb(246, 197, 103, 0.8);
+}

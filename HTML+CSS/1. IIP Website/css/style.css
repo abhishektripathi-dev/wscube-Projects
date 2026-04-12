@@ -1,0 +1,253 @@
+:root {
+    --primary-color: #00a8ec;
+    --secondary-color: #ef9c00;
+    --light-dark-color: #343130;
+    --light-color: #f1f0ef;
+    --black: #000;
+    --white: #fff;
+    --text-color: #343130;
+    /* Course Color */
+    --php-color: #e6611c;
+    --adv-php-color: #5e5da4;
+    --python-color: #7bb1e0;
+    --android-color: #89c222;
+    --digital-marketing-color: #5e5da4;
+    --graphic-design-color: #d70c2a;
+    --seo-color: #308a7c;
+    --wordpress-color: #e6611c;
+}
+
+/* ==============CSS RESET ============ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+body {
+    background-color: var(--black);
+}
+
+/* ================COMMON CSS================ */
+
+.container {
+    width: 1170px;
+    margin: auto;
+}
+
+/* TOP BAR */
+
+.top-bar {
+    background-color: var(--light-dark-color);
+    display: flex;
+    height: 40px;
+    justify-content: space-between;
+    padding: 0px 20px;
+}
+
+.top-bar div {
+    display: flex;
+    font-size: 20px;
+    gap: 8px;
+    align-items: center;
+}
+
+.top-bar a {
+    color: var(--white);
+}
+
+/* MAIN HEADER */
+
+.main-header {
+    background-color: var(--white);
+    display: flex;
+    padding: 0px 50px;
+    justify-content: space-between;
+    align-items: end;
+}
+
+.header__logo {
+    width: 165px;
+    margin-top: 10px;
+}
+
+.header__logo img {
+    width: 100%;
+}
+.main-header nav {
+    width: 70%;
+    margin-bottom: 20px;
+}
+
+.main-header nav ul {
+    display: flex;
+    justify-content: space-between;
+}
+
+.main-header a {
+    font-size: 20px;
+    font-weight: bold;
+    color: var(--black);
+    transition: 0.2s;
+}
+
+.main-header .active {
+    color: var(--primary-color);
+}
+
+.main-header a:hover {
+    color: var(--primary-color);
+    text-decoration: underline;
+}
+
+.main-header .active:hover {
+    text-decoration: none;
+}
+
+/* MAIN Content */
+
+main {
+    background-color: var(--light-color);
+    padding: 20px;
+}
+
+.main-top {
+    background-color: var(--white);
+    width: 1130px;
+    margin: auto;
+    display: flex;
+}
+
+.main-top__left {
+    width: 25%;
+    height: 100%;
+    padding: 5px 10px;
+}
+
+.main-top__left nav li {
+    background-color: var(--primary-color);
+    margin-bottom: 8px;
+    text-align: center;
+    padding: 8px 0px;
+}
+
+.main-top__left nav li a {
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.main-top__left nav li a:hover {
+    font-size: 22px;
+}
+
+.sidebar__news h3 {
+    background-color: var(--secondary-color);
+    border-radius: 15px 15px 0px 0px;
+    text-align: center;
+    color: var(--white);
+    padding: 18px;
+}
+
+.sidebar__news ul {
+    border: 1px solid var(--secondary-color);
+    padding: 5px 10px;
+}
+
+.sidebar__news li {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    line-height: 3rem;
+    color: var(--text-color);
+}
+
+.sidebar__news img {
+    width: 12px;
+    height: 11px;
+    border-radius: 50%;
+}
+
+/* Main top right content */
+
+.main-top__right {
+    width: 75%;
+    height: 100%;
+}
+
+.main-content__header {
+    display: flex;
+    justify-content: space-between;
+    margin: 15px 50px;
+    color: var(--text-color);
+}
+
+.main-content__header em {
+    color: var(--primary-color);
+}
+
+/* FOOTER SECTION */
+
+.footer-top {
+    background-color: var(--light-dark-color);
+    color: white;
+    padding: 20px 100px;
+}
+
+.footer-top__content {
+    display: flex;
+}
+
+.footer__column {
+    width: 25%;
+}
+
+.footer__column h4 {
+    font-size: 24px;
+    padding-bottom: 20px;
+}
+
+.footer__column ul,
+.footer__column address {
+    padding-left: 10px;
+}
+
+.footer__column li {
+    line-height: 2rem;
+}
+
+.footer__column a {
+    color: var(--white);
+}
+
+.footer__column address {
+    font-style: normal;
+    line-height: 1.2rem;
+}
+
+.social-links ul {
+    display: flex;
+    gap: 10px;
+    padding: 10px 8px;
+}
+
+.footer-bottom {
+    text-align: center;
+    background-color: #302d2c;
+    padding: 12px 0;
+    font-size: 18px;
+    color: white;
+}
+
+/* all page .main.top__right content css */
+
+/* Home.html css */
