@@ -1,0 +1,865 @@
+@import url("https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap");
+
+:root {
+    --primary-color: #306598;
+    --secondary-color: #41d853;
+    --secondary-dark-color: #3db33a;
+    --bg-light: #f3f3f3;
+    --text-light: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Mulish", sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+/* Navbar */
+
+header {
+    width: 100%;
+    position: sticky;
+    top: 0;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.349) 0px 5px 15px;
+}
+
+nav {
+    max-width: 1255px;
+    margin: auto;
+    display: flex;
+}
+
+.logo {
+    width: 15%;
+}
+
+.logo img {
+    width: 96px;
+    height: 87px;
+}
+
+.navbar {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+}
+
+.navbar ul {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.navbar ul li a {
+    color: #004282;
+    font-size: 15px;
+    font-weight: 800;
+}
+
+.navbar-btn {
+    width: 25%;
+}
+
+.navbar-btn {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.navbar-btn button {
+    padding: 10px;
+    font-weight: 800px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.book-btn {
+    background-image: linear-gradient(
+        to right,
+        #4a9c46,
+        #3db138,
+        #40d954,
+        #5cc044,
+        #4b9f45
+    );
+    color: white;
+    border: none;
+}
+
+.call-btn {
+    color: #f3842f;
+    border: 2px solid #f3842f;
+    background-color: white;
+}
+
+/* Banner */
+
+.banner {
+    margin-top: 10px;
+    width: 100%;
+    background-color: var(--primary-color);
+}
+
+.banner figure {
+    width: 100%;
+}
+
+.banner-container {
+    width: 1140px;
+    margin: auto;
+    padding: 40px 0px;
+}
+
+.banner-container h1 {
+    color: var(--text-light);
+
+    font-weight: 400;
+}
+
+.banner-form {
+    display: flex;
+    margin: 14px 0px;
+    gap: 30px;
+}
+
+.banner-form div {
+    flex-grow: 1;
+}
+
+.banner-form input {
+    width: 100%;
+    height: 50px;
+    padding-left: 20px;
+}
+
+.banner-form input[type="submit"] {
+    background-image: linear-gradient(
+        to right,
+        #4a9c46,
+        #3db138,
+        #40d954,
+        #5cc044,
+        #4b9f45
+    );
+    color: var(--text-light);
+    border: none;
+    padding-right: 20px;
+    cursor: pointer;
+}
+
+.banner-form input:focus {
+    outline: none;
+}
+
+/* Why Smart City ? Section CSS */
+
+.why-section {
+    width: 100%;
+    background-color: var(--bg-light);
+    padding: 50px 0px;
+}
+
+.why-section_container {
+    width: 1140px;
+    margin: auto;
+}
+
+.why-section_container h1 {
+    font-weight: 800px;
+    color: var(--primary-color);
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.why-section_container p {
+    text-align: center;
+    margin: 30px;
+}
+
+.why-section__img {
+    display: flex;
+}
+
+/* Project Overview */
+
+.project-overview {
+    padding: 40px 0px;
+}
+
+.po_container {
+    width: 1140px;
+    margin: auto;
+    display: flex;
+    gap: 25px;
+}
+
+.po_col {
+    flex-grow: 1;
+}
+
+.po_col-2 h2 {
+    text-transform: uppercase;
+    color: var(--primary-color);
+    margin: 15px 0px;
+    font-weight: 800;
+    font-size: 30px;
+}
+
+.po_col-2 p {
+    margin: 15px 0px;
+    color: var();
+    line-height: 25px;
+}
+
+.po_col-2 ul li {
+    line-height: 30px;
+}
+
+.po_col-2 button {
+    margin-top: 15px;
+    padding: 15px 30px;
+    background-image: linear-gradient(
+        to right,
+        #4a9c46,
+        #3db138,
+        #40d954,
+        #5cc044,
+        #4b9f45
+    );
+    border: none;
+    cursor: pointer;
+    color: var(--text-light);
+    font-weight: 700;
+}
+
+
+/* MORE THAN JUST A PLOT */
+
+.project-highlight {
+    background-color: var(--bg-light);
+    padding: 50px 0px;
+}
+
+.ph-container {
+    width: 1140px;
+    margin: auto;
+    text-align: center;
+}
+
+.ph-container h2 {
+    color: var(--primary-color);
+    font-weight: 800;
+    font-size: 30px;
+    margin: 20px 0px;
+}
+
+.ph-container p {
+    margin-bottom: 10px;
+}
+
+.ph-container__img {
+    width: 1140px;
+    margin: auto;
+    display: flex;
+}
+
+.ph-col > div {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.ph-col-1,
+.ph-col-3 {
+    flex-grow: 2;
+    margin-top: 60px;
+}
+
+.ph-col-2 {
+    flex-grow: 1;
+    text-align: center;
+}
+
+.ph-col-3 div {
+    justify-content: flex-end;
+}
+
+.ph-col-3 p {
+    text-align: end;
+}
+
+.ph-col p {
+    font-size: 18px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    line-height: 25px;
+}
+
+/*PBRERA-SAS81-PR0693  */
+
+.rera-approved {
+    width: 100%;
+}
+
+.rera-approved_cont {
+    width: 1140px;
+    margin: auto;
+    padding-top: 60px;
+}
+
+.rera-approved_cont figure {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.rera-approved_cont figure p {
+    margin-top: 10px;
+    font-weight: 800;
+}
+
+.ra-para p {
+    margin-top: 20px;
+    line-height: 25px;
+}
+
+.ra-card {
+    width: 100%;
+    display: flex;
+    gap: 40px;
+    margin: 40px 0px;
+}
+
+.ra-card div {
+    flex-grow: 1;
+    text-align: center;
+    padding: 40px 0px 60px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.ra-card div h2 {
+    font-size: 30px;
+    letter-spacing: 2px;
+}
+
+.ra-card div p {
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+/* Price List Section */
+
+.price-list {
+    width: 100%;
+}
+
+.price-list_cont h2 {
+    text-transform: uppercase;
+    margin-bottom: 30px;
+    color: var(--primary-color);
+    font-weight: 800;
+    font-size: 30px;
+}
+
+.price-list_cont h3 {
+    margin: 30px 0px;
+    color: var(--primary-color);
+}
+
+.price-list_cont hr {
+    border: none;
+    border-bottom: 1px solid #ccc;
+}
+
+.price-list_cont {
+    width: 1140px;
+    margin: 30px auto;
+    text-align: center;
+}
+
+.price-list_cont button {
+    color: white;
+    background-color: black;
+    padding: 10px 5px;
+    border-radius: 10px;
+}
+.price-list_cont i {
+    color: #ffc83d;
+    margin-right: 5px;
+}
+.price-list_cont button:hover {
+    background-color: #ce9600;
+    color: black;
+}
+
+.pr-table {
+    width: 70%;
+    margin: auto;
+}
+
+.pr-table table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.pr-table table thead tr:first-child th {
+    border: 1px solid black;
+}
+
+.price-list_cont thead th {
+    padding: 16px 0px;
+    color: white;
+    background-color: var(--primary-color);
+}
+
+.price-list_cont thead p {
+    font-weight: 400;
+    margin-top: 5px;
+    font-size: 14px;
+}
+.price-list_cont td,
+.price-list_cont th {
+    padding: 5px 0px;
+    text-align: center;
+}
+
+.pr-table tbody th,
+.pr-table tbody td,
+.pr-table thead tr:last-child th {
+    border: 1px solid #bdb8b8;
+}
+
+.pr-table tbody th {
+    background-color: #eaeaea;
+}
+
+.price-list_cont figure {
+    margin: 60px 0px;
+    text-align: center;
+}
+
+/* HIGHLIGHTS OF SmartCity */
+
+.hos-section {
+    width: 100%;
+    margin-bottom: 100px;
+}
+
+.hos-section h2 {
+    text-align: center;
+    color: var(--primary-color);
+    font-size: 30px;
+    font-weight: 700;
+    margin: 40px 0px;
+}
+
+.hos-section hr {
+    border: none;
+    border: 1px solid #ccc;
+    width: 1200px;
+    margin: auto;
+}
+
+.hos_cont {
+    width: 1140px;
+    margin: 30px auto;
+}
+
+.hos-row {
+    display: flex;
+    text-align: center;
+    margin-bottom: 40px;
+    justify-content: space-between;
+}
+
+.hos-row div {
+    width: 30%;
+}
+
+.hos-row p {
+    font-size: 14px;
+    font-weight: 600;
+    margin-top: 20px;
+}
+
+.hos_btn {
+    display: flex;
+    justify-content: center;
+}
+
+.hos_btn button {
+    background-color: #f4b508;
+    border: none;
+    padding: 20px 80px;
+    font-size: 23px;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: 70px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.hos_btn button:hover {
+    background-color: #ce9600;
+}
+
+/* Youtube Section */
+
+.youtube-section {
+    width: 100%;
+}
+
+.yt_cont {
+    width: 1140px;
+    margin: 40px auto;
+    text-align: center;
+}
+
+.yt_cont h2 {
+    text-transform: uppercase;
+    font-weight: 800;
+    font-size: 30px;
+    color: var(--primary-color);
+}
+
+.yt_cont p {
+    margin: 30px 0px;
+}
+
+.yt_video {
+    display: flex;
+    gap: 30px;
+}
+
+/* Site Plan */
+
+.site-plan {
+    width: 100%;
+}
+
+.site-plan_cont {
+    width: 1140px;
+    margin: 80px auto;
+    text-align: center;
+}
+
+.site-plan_cont h2 {
+    color: var(--primary-color);
+    font-size: 30px;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+.site-plan_cont p {
+    margin: 40px 0px;
+}
+
+.site-plan_cont button {
+    padding: 18px 40px;
+    background-color: #ce9600;
+    font-size: 23px;
+    font-weight: 800;
+    margin: 80px 0px 40px;
+    border-radius: 10px;
+    border: none;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+        rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+        rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.site-plan_cont button:hover {
+    background-color: #f4b508;
+}
+
+/* Location and Map */
+
+.location-section {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.location-section h2 {
+    font-size: 30px;
+    font-weight: 800;
+    color: var(--primary-color);
+    text-transform: uppercase;
+}
+
+.location-section p {
+    margin: 30px 0px;
+}
+
+.location-section figure {
+    margin-bottom: 80px;
+}
+
+/* IMPORTANT LANDMARKS and Amenities*/
+
+.imp-landmark {
+    width: 100%;
+}
+
+.imp-land_cont,
+.amenities_cont {
+    width: 975px;
+    margin: 50px auto;
+}
+
+.imp-land_cont h2,
+.amenities_cont h2 {
+    color: var(--primary-color);
+    text-align: center;
+    margin: 30px 0px;
+    font-size: 30px;
+}
+
+.imp-land_cont h5 {
+    font-size: 16px;
+    font-weight: 400;
+    text-align: center;
+}
+
+.imp-land_cont p {
+    text-transform: uppercase;
+    margin: 20px 0px;
+    font-size: 19px;
+}
+
+.imp-land_cont p i {
+    margin-right: 5px;
+}
+
+.amenities_cont p {
+    text-align: center;
+    margin: 20px 0px;
+}
+.amenities_cont div {
+    display: flex;
+    gap: 10px;
+}
+
+.amenities_cont div figure {
+    flex-grow: 1;
+    text-align: center;
+}
+
+.amenities_cont div figure img {
+    transition: transform 0.3s ease;
+}
+
+.amenities_cont div figure:hover img {
+    transform: scale(1.5);
+}
+
+.amenities_cont div figure p {
+    font-weight: 600;
+    font-size: 18px;
+}
+
+/* Project Gallery */
+.project-gallery {
+    width: 100%;
+}
+
+.pg_cont {
+    max-width: 1140px;
+    margin: auto;
+}
+
+.pg_cont h2 {
+    color: var(--primary-color);
+    text-align: center;
+    margin: 30px 0px;
+    font-size: 30px;
+}
+
+.pg_row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 15px;
+}
+
+.pg_row figure {
+    width: 25%;
+    padding: 0 1%;
+}
+
+.pg_row figure img {
+    display: block;
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+    /* transition: <property> <duration> <timing-function>; */
+}
+
+.pg_row figure img:hover {
+    transform: scale(1.05);
+    /* transform: <transform-function>(<value>);
+    scale(): A transform function that resizes the element.
+    1.05: Scale factor (1.0 = original size, 1.05 = 105% larger). */
+}
+
+/* Home Loan Facility */
+
+.hlf-section {
+    width: 100%;
+}
+
+.hlf_cont {
+    width: 1140px;
+    margin: 40px auto;
+    text-align: center;
+}
+
+.hlf_cont h2 {
+    color: var(--primary-color);
+    text-align: center;
+    margin: 30px 0px;
+    font-size: 30px;
+}
+.hlf_cont p {
+    margin: 30px 0px;
+}
+
+.hlf_cont div {
+    display: flex;
+    gap: 30px;
+}
+
+.hlf_cont figure {
+    flex-grow: 1;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    width: 100%;
+    /* height: 163px; */
+    padding: 10px;
+    transition: transform 0.3s ease;
+}
+
+.hlf_cont img {
+    width: 100%;
+}
+
+.hlf_cont figure:hover {
+    transform: scale(1.05);
+}
+
+/* Schedule Your Site Visit */
+
+.sysv-section {
+    width: 100%;
+    padding: 50px 0px;
+    background-color: var(--bg-light);
+}
+
+.sysv_cont {
+    width: 1140px;
+    margin: auto;
+    padding: 20px;
+    border: 5px solid var(--primary-color);
+    display: flex;
+    justify-content: space-between;
+}
+
+.sysv_cont-col {
+    width: 49%;
+}
+
+.sysv_cont-col h2 {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 25px;
+    text-transform: uppercase;
+}
+
+.sysv_cont-col p {
+    font-size: 14px;
+    line-height: 25px;
+    font-weight: 400;
+}
+
+.sysv_cont-col {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* .sysv_btn button{
+    display: inline-block;
+} */
+
+.sysv_btn {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.sysv_btn button {
+    padding: 15px;
+    background-image: linear-gradient(
+        to right,
+        #4a9c46,
+        #3db138,
+        #40d954,
+        #5cc044,
+        #4b9f45
+    );
+    color: white;
+    font-size: 18px;
+    border: none;
+    cursor: pointer;
+}
+
+.sysv_btn button i {
+    margin-right: 8px;
+}
+
+/* Footer Section */
+
+.footer {
+    width: 100%;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 96px 0px;
+}
+
+.footer_cont {
+    width: 1140px;
+    margin: auto;
+}
+
+.footer_row-1 {
+    display: flex;
+    justify-content: space-around;
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
+.footer_row-1 h2 {
+    margin-bottom: 18px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    text-align: end;
+    font-size: 23px;
+    font-weight: 600;
+}
+
+.footer_row p {
+    text-align: center;
+    margin-bottom: 17px;
+}
