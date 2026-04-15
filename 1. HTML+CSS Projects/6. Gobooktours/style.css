@@ -1,0 +1,766 @@
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    font-family: "Work Sans", sans-serif;
+}
+
+.fixed-bottom-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #5c1c4b;
+    border: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+}
+
+.fixed-bottom-icon img{
+    width: 32px;
+    height: 32px;
+}
+
+header {
+    width: 100%;
+    border-bottom: 1px solid #ccc;
+}
+
+.navbar {
+    width: 1140px;
+    display: flex;
+    margin: 5px auto;
+}
+
+.navbar > figure {
+    flex-basis: 20%;
+    display: flex;
+    align-items: center;
+}
+
+.navbar > figure > img {
+    /* width: 100%; */
+    width: 168px;
+    height: 27px;
+    display: block;
+}
+
+.navbar > nav {
+    flex-grow: 1;
+}
+
+.navbar > nav > ul {
+    display: flex;
+    border: 0px solid red;
+    justify-content: flex-end;
+    position: relative;
+}
+
+.navbar > nav > ul > li {
+    padding: 24px 20px;
+}
+
+.navbar > nav > ul > li > a {
+    color: #5c1c4b;
+}
+
+.navbar > nav > ul > li > a > i {
+    font-size: 13px;
+}
+
+/* Destination Mega Menu */
+
+.destMegamenu {
+    position: absolute;
+    left: -140px;
+    top: 100%;
+    border: 1px solid #5c1c4b;
+    border-radius: 7px;
+    width: 115%;
+    padding: 20px 10px;
+    background-color: #fff;
+    /* opacity: 0;
+    visibility: hidden; */
+    /* transition: 500ms; */
+    transform: scaleY(0);
+    transform-origin: top;
+    z-index: 999;
+}
+
+.destMegamenu > h2 {
+    font-size: 20px;
+    font-weight: 500;
+    padding: 15px 5px;
+}
+
+.destMegamenu__content {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.destMegamenu__content h3 {
+    font-size: 20px;
+    font-weight: 500;
+    padding: 15px 0px;
+    color: #5c1c4b;
+    cursor: pointer;
+}
+
+.destMegamenu__content li {
+    line-height: 26px;
+}
+
+.destMegamenu__content a {
+    color: #5c1c4b;
+}
+
+.destMegamenu__content hr {
+    margin-top: 15px;
+    width: 230px;
+}
+
+.navbar > nav > ul > li:hover .destMegamenu {
+    transform: scaleY(1);
+    /* opacity: 1;
+    visibility: visible; */
+}
+
+/* Themes Mega Menu */
+
+.themeMegamenu {
+    position: absolute;
+    left: 50%;
+    top: 100%;
+    border: 1px solid #5c1c4b;
+    border-radius: 7px;
+    width: 50%;
+    padding: 20px 10px;
+    background-color: #fff;
+    /* opacity: 0; */
+    /* visibility: hidden; */
+    /* transition: 500ms; */
+    transform: scaleY(0);
+    transform-origin: top;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    z-index: 999;
+}
+
+.themeMegamenu li {
+    line-height: 36px;
+}
+
+.themeMegamenu a {
+    color: #5c1c4b;
+}
+
+.navbar > nav > ul > li:hover .themeMegamenu {
+    transform: scaleY(1);
+}
+
+/* Hero Section */
+
+.hero-section {
+    max-width: 1140px;
+    margin: auto;
+}
+
+.hero-top {
+    display: flex;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.hero-top img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+.hero-top > div {
+    height: 500px;
+    position: relative;
+}
+
+.hero-top-left {
+    flex-basis: 65%;
+}
+.hero-top-right {
+    flex-grow: 1;
+}
+
+.hero-top-right img {
+    filter: brightness(50%);
+}
+
+.hero-top-left > div {
+    position: absolute;
+    top: 40%;
+    left: 10%;
+    border: 0px solid #ccc;
+}
+
+.hero-top-left > div > h1 {
+    color: #fff;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.hero-input {
+    width: 600px;
+    height: 50px;
+    display: flex;
+}
+
+.hero-input input {
+    padding: 8px 20px;
+    height: 100%;
+    width: 85%;
+    border: none;
+    font-size: 18px;
+}
+.hero-input button {
+    padding: 8px 20px;
+    height: 100%;
+    width: 15%;
+    border: none;
+    background-color: #5c1c4b;
+}
+
+.hero-input button:hover {
+    background-color: #20371e;
+}
+
+.hero-input button i {
+    font-size: 18px;
+    color: #fff;
+}
+
+.hero-input input:focus {
+    outline: none;
+    border: 1px solid #5c1c4b;
+}
+
+.hero-input input::placeholder {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.hero-right-content {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+}
+
+.hero-right-content h3 {
+    background-color: #fff;
+    display: inline-block;
+    font-size: 17px;
+    font-weight: 400;
+    padding: 3px;
+    border-radius: 5px;
+}
+
+.hero-right-content h2 {
+    margin: 10px 0px;
+    color: #fff;
+    font-size: 28px;
+    font-weight: 500;
+}
+
+.hero-right-content p {
+    color: #fff;
+}
+
+.hero-bottom {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin: 30px 0px;
+}
+
+.hero-bottom > div {
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    display: flex;
+    gap: 20px;
+    padding: 30px 10px;
+}
+
+.hero-bottom-content > h3 {
+    margin-bottom: 15px;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.hero-bottom-content > p {
+    line-height: 27px;
+}
+
+.hero-bottom figure {
+    display: flex;
+    align-items: center;
+}
+.hero-bottom figure img {
+    width: 100%;
+}
+
+/* Top Trending India Holiday Destinations */
+
+.india-destinations-sec {
+    width: 100%;
+}
+
+.section-cont {
+    width: 1140px;
+    margin: 30px auto;
+    padding-bottom: 80px;
+}
+
+.section-title {
+    font-weight: 500;
+    padding: 40px 0px 30px;
+}
+
+.india-destinations {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr 1fr 1fr;
+    grid-auto-rows: 230px;
+    gap: 20px;
+}
+
+.card {
+    position: relative;
+    border-radius: 18px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* filter: brightness(70%); */
+}
+
+.card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.1));
+}
+
+.overlay {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    color: #fff;
+    z-index: 2;
+}
+
+.overlay h3 {
+    font-size: 22px;
+    font-weight: 500;
+    margin-bottom: 7px;
+}
+
+.overlay p {
+    font-size: 14px;
+}
+
+/* Large Card */
+
+.card--large {
+    grid-row: span 2;
+}
+
+/*   Top Trending International Holiday Destinations */
+
+.international-dest-sec {
+    width: 100%;
+}
+
+.international-dest {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 200px;
+    gap: 20px;
+}
+
+/* Browse tours by travel themes */
+
+.theme-dest-sec {
+    width: 100%;
+}
+
+.theme-dest {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 250px;
+    gap: 20px;
+}
+
+/* Top Picks For You */
+
+.top-picks-sec {
+    width: 100%;
+    background-color: #efeeee;
+}
+
+.picks-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 28px;
+}
+
+.pick-card {
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-direction: column;
+}
+
+.pick-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.pick-body {
+    padding: 18px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.pick-body h3 {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.pick-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 18px;
+    padding-top: 18px;
+    border-top: 1px solid #eee;
+}
+
+.pick-footer span {
+    font-size: 16px;
+    color: #444;
+}
+
+.pick-footer button {
+    background: #5b1c4d;
+    color: #fff;
+    border: none;
+    padding: 12px 18px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.pick-footer button:hover {
+    background-color: #20371e;
+}
+
+/* Our Best Sellers */
+
+.overlay-label {
+    background-color: #198754;
+    color: #fff;
+    padding: 8px;
+    font-size: 14px;
+    border-radius: 10px;
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    z-index: 999;
+}
+
+.overlay-btn {
+    background-color: #198754;
+    color: #fff;
+    padding: 8px;
+    border-radius: 10px;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    border: 2px solid white;
+    z-index: 999;
+    position: absolute;
+    top: 42%;
+}
+
+.overlay-btn-left {
+    left: 0px;
+}
+
+.overlay-btn-right {
+    right: 0px;
+}
+
+.overlay-btn i {
+    font-size: 25px;
+}
+
+.dot {
+    /* border: 1px solid ; */
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.dot-item {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background-color: #ccc;
+}
+
+.dark-dot {
+    background-color: #444;
+}
+
+/* Check our latest blog posts! */
+
+.blog-post-sec {
+    width: 100%;
+    background-color: #efeeee;
+}
+
+.post-title {
+    font-size: 24px;
+    font-weight: 500;
+    padding: 40px 0px 20px;
+    opacity: 0.9;
+}
+
+.post-para {
+    margin-bottom: 15px;
+}
+
+.post-para a {
+    font-weight: 700;
+    text-decoration: underline;
+    color: black;
+}
+
+.post-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+}
+
+.post-card {
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #ccc;
+}
+
+.post-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.post-body {
+    padding: 18px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.post-body h3 {
+    font-size: 24px;
+    font-weight: 700;
+    opacity: 0.8;
+    margin: 20px 0px;
+}
+
+.post-body p {
+    line-height: 24px;
+    opacity: 0.8;
+}
+
+/* Frequently Asked Questions (FAQ's) */
+
+.faq-section {
+    width: 100%;
+}
+
+.faq-title {
+    font-size: 24px;
+    font-weight: 500;
+    padding-top: 30px;
+    margin-bottom: 10px;
+}
+
+.faq-box {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.faq-box > div {
+    border: 1px solid #ccc;
+    padding: 16px 20px;
+    font-size: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Subscribe to our Newsletter */
+
+.subscribe-sec {
+    width: 100%;
+    border-top: 1px solid #ccc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 144px;
+    gap: 20px;
+}
+
+.subscribe-input {
+    height: 48px;
+    width: 485px;
+    font-size: 18px;
+    padding: 7px 15px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+}
+
+.subscribe-input:focus {
+    border: 0.8px solid blue;
+    outline: none;
+}
+
+.subscribe-btn {
+    width: 131;
+    height: 48px;
+    border: none;
+    background-color: #198754;
+    padding: 7px 15px;
+    border-radius: 10px;
+    color: white;
+    font-size: 20px;
+}
+
+.subscribe-btn:hover {
+    background-color: #0d5e38;
+}
+
+/* Footer */
+
+footer {
+    width: 100%;
+    background-color: #000000;
+    padding: 30px 5px;
+}
+
+.review-section {
+    width: 100%;
+    border-radius: 5px;
+    display: flex;
+    color: white;
+    background-color: #cccdce;
+    padding: 10px;
+    justify-content: center;
+}
+
+.review-section p {
+    font-size: 22px;
+}
+
+.footer-content {
+    width: 1140px;
+    margin: 10px auto;
+}
+
+.footer-menu {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+.footer-menu-heading {
+    font-size: 22px;
+    font-weight: 500;
+    color: white;
+    margin: 20px 0px;
+}
+
+.navbar-list li {
+    line-height: 26px;
+}
+
+.navbar-list i {
+    color: white;
+    font-size: 12px;
+    margin-right: 5px;
+}
+
+.navbar-list a {
+    color: white;
+}
+
+.footer-hr {
+    color: white;
+    margin: 30px auto;
+}
+
+.footer-bottom-sec {
+    display: grid;
+    padding: 0px 20px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.footer-bottom-card {
+    display: flex;
+    gap: 5px;
+    color: white;
+    align-items: center;
+}
+
+.footer-bottom-card img {
+    width: 40px;
+    height: 24px;
+}
+
+.footer-bottom-card button {
+    width: 40px;
+    height: 40px;
+    background-color: transparent;
+    border: none;
+}
+
+.footer-bottom-card button:hover {
+    background-color: white;
+    border-radius: 50%;
+}
+
+.footer-bottom-card i {
+    padding: 0px 13px;
+    cursor: pointer;
+}
+
+.footer-bottom-card i:hover {
+    color: #4472f0;
+}
