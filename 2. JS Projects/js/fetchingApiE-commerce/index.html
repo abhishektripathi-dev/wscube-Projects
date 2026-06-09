@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Products — Shop</title>
+        <link rel="stylesheet" href="styles.css" />
+    </head>
+    <body>
+        <header class="site-header">
+            <div class="container">
+                <h1 class="site-title">Shop Products</h1>
+                <p class="site-sub">
+                    Responsive product grid — light theme sample layout
+                </p>
+            </div>
+        </header>
+
+        <main class="container">
+            <div class="controls">
+                <div class="results">Showing <strong>30</strong> products</div>
+                <div class="sort">
+                    Sort:
+                    <select aria-label="Sort products">
+                        <option>Popular</option>
+                        <option>Price: Low to High</option>
+                        <option>Price: High to Low</option>
+                    </select>
+                </div>
+            </div>
+
+            <section class="product-grid" aria-label="Products">
+            </section>
+        </main>
+
+        <footer class="site-footer">
+            <div class="container">© 2026 Shop — sample layout</div>
+        </footer>
+
+        <script>
+            let API = "https://dummyjson.com/products";
+
+            let productGrid = document.querySelector(".product-grid")
+
+            let displayProduct = (products) => {
+                let productItems = "";
+
+                products.forEach((obj) => {
+                    let { title, price, thumbnail } = obj;
+
+                    productItems += `<article class="product-card">
+                        <div class="media">
+                            <img src="${thumbnail}" alt="Vintage camera" loading="lazy" width="100%">
+                        </div>
+                        <div class="meta">
+                            <h3 class="product-title">${title}</h3>
+                            <div class="price-row">
+                                <div class="price"><span class="current">$${price}</span> <span class="old">$${(Number(price) + 10).toFixed(2)}</span></div>
+                                <button class="btn-add" aria-label="Add Vintage Camera to cart">Add to cart</button>
+                            </div>
+                        </div>
+                    </article>`;
+                });
+
+                productGrid.innerHTML = productItems
+            };
+
+            let fetchApi = async () => {
+                let product = await fetch(API);
+                let productData = await product.json();
+
+                let { products } = productData;
+
+                displayProduct(products);
+            };
+
+            fetchApi();
+        </script>
+    </body>
+</html>

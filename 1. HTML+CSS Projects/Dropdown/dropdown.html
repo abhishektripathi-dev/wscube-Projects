@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Smooth Dropdown</title>
+        <!-- <link rel="stylesheet" href="styles.css" /> -->
+        <style>
+            /* Reset */
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            /* Navbar */
+            .navbar {
+                background: #111;
+                padding: 15px 30px;
+                font-family: Arial, sans-serif;
+            }
+
+            .menu {
+                list-style: none;
+                display: flex;
+                gap: 30px;
+            }
+
+            .menu-item {
+                position: relative;
+                /* border: 1px solid white; */
+            }
+
+            .menu-item a {
+                text-decoration: none;
+                color: #fff;
+                font-size: 16px;
+                padding: 8px 5px;
+                display: inline-block;
+                transition: color 0.3s ease;
+            }
+
+            /* 👉  Use inline-block when:
+                    You want elements inline
+                    But need padding, margin, width, height control */
+
+            .menu-item a:hover {
+                color: #00c6ff;
+            }
+
+            /* Dropdown */
+            .dropdown-menu {
+                position: absolute;
+                top: 120%;
+                left: 0;
+                list-style: none;
+                background: #222;
+                border-radius: 8px;
+                min-width: 200px;
+                padding: 10px 0;
+
+                /* Animation initial state */
+                opacity: 0;
+                visibility: hidden;
+                transform: translateY(10px);
+                transition: all 0.3s ease;
+
+                box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+            }
+
+            /* Dropdown Items */
+            .dropdown-menu li a {
+                display: block;
+                padding: 10px 20px;
+                color: #ddd;
+                transition:
+                    background 0.3s,
+                    color 0.3s;
+            }
+
+            .dropdown-menu li a:hover {
+                background: #333;
+                color: #fff;
+            }
+
+            /* Show Dropdown on Hover */
+            .dropdown:hover .dropdown-menu,
+            .dropdown:focus-within .dropdown-menu {
+                opacity: 1;
+                visibility: visible;
+                transform: translateY(0);
+            }
+        </style>
+    </head>
+    <body>
+        <nav class="navbar">
+            <ul class="menu">
+                <li class="menu-item">
+                    <a href="#">Home</a>
+                </li>
+
+                <li class="menu-item dropdown">
+                    <a href="#">Services ▾</a>
+
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Web Development</a></li>
+                        <li><a href="#">App Development</a></li>
+                        <li><a href="#">UI/UX Design</a></li>
+                        <li><a href="#">SEO Optimization</a></li>
+                    </ul>
+                </li>
+
+                <li class="menu-item">
+                    <a href="#">About</a>
+                </li>
+
+                <li class="menu-item">
+                    <a href="#">Contact</a>
+                </li>
+            </ul>
+        </nav>
+    </body>
+</html>

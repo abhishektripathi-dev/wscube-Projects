@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            body {
+                font-family: Arial, sans-serif;
+                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                min-height: 100vh;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .countdown-container {
+                text-align: center;
+                background: white;
+                padding: 40px;
+                border-radius: 10px;
+                box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+            }
+
+            h1 {
+                margin-bottom: 30px;
+                color: #333;
+            }
+
+            .countdown-display {
+                display: flex;
+                gap: 20px;
+                justify-content: center;
+            }
+
+            .countdown-item {
+                background: #f0f0f0;
+                padding: 20px;
+                border-radius: 8px;
+                min-width: 100px;
+            }
+
+            .countdown-value {
+                font-size: 48px;
+                font-weight: bold;
+                color: #667eea;
+                display: block;
+            }
+
+            .countdown-label {
+                font-size: 14px;
+                color: #666;
+                margin-top: 10px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="countdown-container">
+            <h1>Countdown Timer</h1>
+            <div class="countdown-display">
+                <div class="countdown-item">
+                    <span class="countdown-value">00</span>
+                    <p class="countdown-label">Days</p>
+                </div>
+                <div class="countdown-item">
+                    <span class="countdown-value">00</span>
+                    <p class="countdown-label">Hours</p>
+                </div>
+                <div class="countdown-item">
+                    <span class="countdown-value">00</span>
+                    <p class="countdown-label">Minutes</p>
+                </div>
+                <div class="countdown-item">
+                    <span class="countdown-value">00</span>
+                    <p class="countdown-label">Seconds</p>
+                </div>
+            </div>
+
+            <button>Stop</button>
+        </div>
+    </body>
+    <script>
+        // Math.floor(10.1) //10
+        // Math.floor(88.9) //88
+
+        // Math.ceil(10.1) //11
+        // Math.ceil(29.9) //30
+        let spanElement = document.querySelectorAll(".countdown-item span");
+        let myCounDown = () => {
+            let date = new Date(); //Current time  19 March 2026 20:22
+            let currentDateMs = date.getTime(); //MS
+            // console.log(date.getHours());
+            // console.log(date.getMinutes());
+            // console.log(date.getSeconds());
+            let countDownDate = new Date("Thu Mar 24 2026 23:59:59 GMT+0530");
+            let countDownDateMS = countDownDate.getTime(); //Ms
+
+            let diffMs = countDownDateMS - currentDateMs; //Diff Ms
+            let finalSecond = Math.floor(diffMs / 1000); //Second
+
+            let oneMin = 60;
+            let oneHour = oneMin * 60; //3600
+            let oneDay = oneHour * 24; //86400
+            let days = Math.floor(finalSecond / oneDay); //4,32,000
+            let remSecondafterDays = finalSecond % oneDay;
+            let hours = Math.floor(remSecondafterDays / oneHour);
+            let remSecondAfterSecondHour = remSecondafterDays % oneHour;
+            let finalMin = Math.floor(remSecondAfterSecondHour / oneMin);
+            let seconds = remSecondAfterSecondHour % oneMin;
+            let finalArray = [
+                days < 10 ? "0" + days : days,
+                hours < 10 ? "0" + hours : oneHour,
+                finalMin < 10 ? "0" + finalMin : oneMin,
+                seconds < 10 ? "0" + seconds : seconds,
+            ];
+            // spanElement[0].innerHTML=finalArray[0]
+            // spanElement[1].innerHTML=finalArray[1]
+            // spanElement[2].innerHTML=finalArray[2]
+            // spanElement[3].innerHTML=finalArray[3]
+            spanElement.forEach((span, index) => {
+                span.innerHTML = finalArray[index];
+            });
+        };
+
+        myCounDown(); //page One First time Function
+        let myIntrervel = setInterval(() => {
+            myCounDown();
+        }, 1000);
+
+        let btn = document.querySelector("button");
+
+        btn.addEventListener("click", () => {
+            clearInterval(myIntrervel);
+        });
+    </script>
+</html>

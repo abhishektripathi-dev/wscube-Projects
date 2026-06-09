@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+                text-decoration: none;
+                font-family: Arial, Helvetica, sans-serif;
+            }
+
+            .container {
+                background-color: antiquewhite;
+                padding: 20px 10px;
+                width: 300px;
+                margin: 10px auto;
+            }
+
+            .container input[type="text"] {
+                width: 100%;
+                padding: 7px;
+                margin-bottom: 10px;
+                border: 1px solid rgb(211, 131, 28);
+                font-size: 15px;
+            }
+
+            .container input[type="text"]::placeholder {
+                font-size: 15px;
+            }
+
+            .container form > button {
+                padding: 5px;
+                display: flex;
+                font-size: 15px;
+                margin: auto;
+                cursor: pointer;
+            }
+
+            .todo-list {
+                list-style-position: inside;
+                margin: 10px 10px;
+            }
+
+            .todo-list li {
+                display: flex;
+                justify-content: space-between;
+            }
+
+            .btnTodoList button {
+                cursor: pointer;
+            }
+
+            .btn-disabled {
+                pointer-events: none;
+                cursor: not-allowed;
+                opacity: 0.6; /* Visual indicator of being inactive */
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <form>
+                <input
+                    type="text"
+                    name="todoTitle"
+                    id="todo"
+                    placeholder="Enter your Todo"
+                />
+                <button type="submit">Submit</button>
+            </form>
+
+            <ol class="todo-list">
+                <li style="text-decoration: line-through">
+                    <p>Book</p>
+                    <div class="btnTodoList">
+                        <button class="edit btn-disabled" >
+                            Edit
+                        </button>
+                        <button class="delete">Delete</button>
+                    </div>
+                </li>
+            </ol>
+        </div>
+    </body>
+
+    <script>
+        const formEl = document.querySelector("form");
+        const todoListEl = document.querySelector(".todo-list");
+
+        let todoArr = [];
+
+        function displayData() {
+            todoListEl.innerHTML = "";
+            let str = "";
+
+            todoArr.forEach((el, index) => {
+                str += `<li data-id=${index} >
+                    <p>${el.title}</p>
+                    <div class="btnTodoList">
+                        <button onclick="edit(${index})" class="edit">Edit</button>
+                        <button onclick="delete(${index})" class="delete">Delete</button>
+                    </div>
+                </li>`;
+            });
+
+            todoListEl.innerHTML = str;
+        }
+
+        formEl.addEventListener("submit", (e) => {
+            e.preventDefault();
+            // console.dir(e.target.todoTitle.value);
+
+            let obj = {
+                title: e.target.todoTitle.value,
+                isStatus: true,
+            };
+
+            todoArr.push(obj);
+            console.log(todoArr);
+            displayData();
+        });
+    </script>
+</html>

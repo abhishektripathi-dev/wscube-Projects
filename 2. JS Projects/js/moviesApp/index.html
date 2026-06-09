@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width,initial-scale=1" />
+	<title>Movies App — Static Layout</title>
+	<style>
+		:root{
+			--bg:#0f1724; --card:#0b1220; --muted:#94a3b8; --accent:#06b6d4;
+			--gap:18px; --radius:12px;
+			font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+		}
+		*{box-sizing:border-box}
+		body{margin:0;background:linear-gradient(180deg,#071029 0%, #071014 100%);color:#e6eef6;min-height:100vh}
+		header{display:flex;align-items:center;justify-content:space-between;padding:20px 28px}
+		.brand{display:flex;gap:12px;align-items:center}
+		.logo{width:44px;height:44px;border-radius:10px;background:linear-gradient(135deg,var(--accent),#7c3aed)}
+		h1{font-size:18px;margin:0}
+		.search{display:flex;gap:10px;align-items:center;background:rgba(255,255,255,0.03);padding:8px;border-radius:10px;border:1px solid rgba(255,255,255,0.03)}
+		.search input{background:transparent;border:0;color:inherit;outline:none;width:220px}
+		main{display:grid;grid-template-columns:260px 1fr;gap:var(--gap);padding:0 28px 40px}
+		/* Sidebar */
+		.sidebar{padding:18px;background:rgba(255,255,255,0.02);border-radius:var(--radius);border:1px solid rgba(255,255,255,0.02);height:fit-content}
+		.sidebar h3{margin:0 0 12px 0;font-size:13px;color:var(--muted)}
+		.filter{display:flex;flex-direction:column;gap:8px}
+		.chip{padding:8px 10px;border-radius:999px;background:transparent;border:1px solid rgba(255,255,255,0.03);cursor:pointer;color:var(--muted);font-size:13px}
+		/* Content */
+		.content{display:flex;flex-direction:column;gap:16px}
+		.controls{display:flex;justify-content:space-between;align-items:center;padding:0 6px}
+		.sort{color:var(--muted);font-size:13px}
+		.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:18px}
+		.card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:10px;border-radius:12px;overflow:hidden;border:1px solid rgba(255,255,255,0.02);transition:transform .18s,box-shadow .18s}
+		.card:hover{transform:translateY(-6px);box-shadow:0 8px 28px rgba(2,6,23,0.6)}
+		.poster{width:100%;height:260px;object-fit:cover;border-radius:8px;background:linear-gradient(90deg,#111827,#0b1220);display:block}
+		.meta{padding:8px 2px}
+		.title{font-weight:600;margin:0 0 6px 0;font-size:14px}
+		.sub{color:var(--muted);font-size:13px;margin:0}
+		.rating{display:inline-block;margin-top:8px;padding:6px 8px;border-radius:999px;background:#021124;color:#a7f3d0;font-weight:600;font-size:12px}
+		footer{padding:20px 28px;color:var(--muted);font-size:13px}
+		/* Responsive */
+		@media (max-width:900px){
+			main{grid-template-columns:1fr; padding:0 16px 40px}
+			.sidebar{order:2}
+		}
+	</style>
+</head>
+<body>
+	<header>
+		<div class="brand">
+			<div class="logo" aria-hidden="true"></div>
+			<div>
+				<h1>Movies Hub</h1>
+				<div style="color:var(--muted);font-size:13px">Static layout demo</div>
+			</div>
+		</div>
+		<div class="search" role="search" aria-label="Search movies">
+			<svg width="16" height="16" viewBox="0 0 24 24" fill="none" style="opacity:.8"><path d="M21 21l-4.35-4.35" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="11" cy="11" r="6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+			<input  placeholder="Search movies, genres, actors..." />
+		</div>
+	</header>
+
+	<main>
+		<aside class="sidebar" aria-label="Filters">
+			<h3>Filters</h3>
+			<div class="filter">
+				<button class="chip">All</button>
+				<button class="chip">Action</button>
+				<button class="chip">Comedy</button>
+				<button class="chip">Drama</button>
+				<button class="chip">Sci-fi</button>
+			</div>
+			<h3 style="margin-top:18px">Year</h3>
+			<div class="filter">
+				<button class="chip">2024</button>
+				<button class="chip">2023</button>
+				<button class="chip">2022</button>
+			</div>
+		</aside>
+
+		<section class="content">
+			<div class="controls">
+				<div style="font-size:15px">Showing <strong>12</strong> movies</div>
+				<div class="sort">Sort: Popularity ▾</div>
+			</div>
+
+			<div class="grid" aria-live="polite">
+				<!-- Example movie cards -->
+				<article class="card" role="article">
+					<img class="poster" src="https://picsum.photos/seed/movie1/400/600" alt="Movie poster">
+					<div class="meta">
+						<h4 class="title">The Lost Horizon</h4>
+						<p class="sub">Action • 2024</p>
+						<div class="rating">8.4</div>
+					</div>
+				</article>
+
+				<article class="card">
+					<img class="poster" src="https://picsum.photos/seed/movie2/400/600" alt="Movie poster">
+					<div class="meta">
+						<h4 class="title">Midnight Whisper</h4>
+						<p class="sub">Drama • 2023</p>
+						<div class="rating">7.9</div>
+					</div>
+				</article>
+
+				<article class="card">
+					<img class="poster" src="https://picsum.photos/seed/movie3/400/600" alt="Movie poster">
+					<div class="meta">
+						<h4 class="title">Galactic Run</h4>
+						<p class="sub">Sci‑fi • 2022</p>
+						<div class="rating">8.1</div>
+					</div>
+				</article>
+
+				<article class="card">
+					<img class="poster" src="https://picsum.photos/seed/movie4/400/600" alt="Movie poster">
+					<div class="meta">
+						<h4 class="title">Laugh Track</h4>
+						<p class="sub">Comedy • 2024</p>
+						<div class="rating">7.3</div>
+					</div>
+				</article>
+
+				<!-- repeat as needed for layout demonstration -->
+			</div>
+		</section>
+	</main>
+
+	<footer>
+		Built as a static layout demo — replace placeholders with your data.
+	</footer>
+
+    <script>
+        // https://api.themoviedb.org/3/search/movie?&api_key=04c35731a5ee918f014970082a0088b1&query=${search}
+        // https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=04c35731a5ee918f014970082a0088b1&page=${page}
+    </script>
+</body>
+</html>

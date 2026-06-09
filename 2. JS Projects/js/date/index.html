@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            .countdown-container {
+                display: flex;
+                gap: 20px;
+                justify-content: center;
+                align-items: center;
+                margin-top: 50px;
+                flex-wrap: wrap;
+            }
+
+            .countdown-item {
+                text-align: center;
+                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                padding: 30px;
+                border-radius: 10px;
+                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+                min-width: 100px;
+            }
+
+            .countdown-value {
+                font-size: 48px;
+                font-weight: bold;
+                color: white;
+            }
+
+            .countdown-label {
+                font-size: 14px;
+                color: rgba(255, 255, 255, 0.8);
+                margin-top: 10px;
+                text-transform: uppercase;
+                letter-spacing: 2px;
+            }
+
+            #stopBtn {
+                display: block;
+                margin: 30px auto;
+                padding: 10px 20px;
+                font-size: 16px;
+                cursor: pointer;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="countdown-container">
+            <div class="countdown-item">
+                <div class="countdown-value" id="days">0</div>
+                <div class="countdown-label">Days</div>
+            </div>
+            <div class="countdown-item">
+                <div class="countdown-value" id="hours">0</div>
+                <div class="countdown-label">Hours</div>
+            </div>
+            <div class="countdown-item">
+                <div class="countdown-value" id="minutes">0</div>
+                <div class="countdown-label">Minutes</div>
+            </div>
+            <div class="countdown-item">
+                <div class="countdown-value" id="seconds">0</div>
+                <div class="countdown-label">Seconds</div>
+            </div>
+        </div>
+        <button id="stopBtn">Stop Countdown</button>
+
+        <script src="script.js"></script>
+    </body>
+</html>

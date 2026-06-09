@@ -1,0 +1,51 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-color: #fdeed1;
+}
+
+.main {
+    width: 900px;
+    margin: auto;
+}
+
+.main h2 {
+    text-align: center;
+    padding: 20px 0;
+}
+
+.faq {
+    border: 1px solid orange;
+    margin-bottom: 10px;
+}
+
+.faq h3 {
+    background-color: orange;
+    padding: 7px 2px;
+    position: relative;
+}
+
+.faq span {
+    position: absolute;
+    right: 10px;
+}
+
+.ans {
+    max-height: 0;
+    transform: scaleY(0);
+    transition: transform 0.5s;
+    transform-origin: top;
+}
+
+.showAns {
+    max-height: 1000px;
+    padding: 10px;
+    transform: scaleY(1);
+}

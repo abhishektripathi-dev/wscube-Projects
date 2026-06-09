@@ -1,0 +1,660 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Spotify Clone</title>
+
+        <!-- font-awesome cdn -->
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        />
+
+        <!-- css stylesheet -->
+        <link rel="stylesheet" href="css/style.css" />
+        <link rel="stylesheet" href="css/media.css" />
+    </head>
+    <body>
+        <!--Spotify header part -->
+
+        <header>
+            <!-- Navbar for desktop -->
+
+            <nav class="navbar-desktop">
+                <div class="nav-left">
+                    <div class="logo"><i class="fa-brands fa-spotify"></i></div>
+                    <div class="home-icon">
+                        <i class="fa-solid fa-house"></i>
+                    </div>
+                    <div class="search-bar">
+                        <div class="search-icon">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </div>
+                        <div class="input-box">
+                            <input
+                                type="text"
+                                placeholder="What do you want to play?"
+                            />
+                        </div>
+                        <div class="browse-icon">
+                            <i class="fa-solid fa-folder-open"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="nav-right">
+                    <div class="right-half-p1">
+                        <p class="nav-text">Premium</p>
+                        <p class="nav-text">Support</p>
+                        <p class="nav-text">Download</p>
+                    </div>
+                    <div class="right-half-p2">
+                        <div class="nav-text install">
+                            <i class="fa-regular fa-circle-down"></i>Install App
+                        </div>
+                        <div class="nav-text">Sign up</div>
+                        <button class="login-btn">Log in</button>
+                    </div>
+                </div>
+            </nav>
+
+            <!-- Navbar for moible and tablet -->
+            <nav class="navbar-mb-tb">
+                <div class="nav-items nav-top">
+                    <div class="mb-logo">
+                        <i class="fa-brands fa-spotify"></i>Spotify
+                    </div>
+
+                    <div class="nav-top-right">
+                        <div>
+                            <button>Open App</button>
+                        </div>
+
+                        <ul class="nav-links hidden">
+                            <h3>Log in</h3>
+                            <h3>Sign up</h3>
+                            <hr />
+                            <li><a href="#">Premium</a></li>
+                            <li><a href="#">Help</a></li>
+                            <li><a href="#">Download</a></li>
+                            <li><a href="#">Privacy</a></li>
+                            <li><a href="#">Terms</a></li>
+                        </ul>
+
+                        <div class="hamburger">
+                            <i class="fa-solid fa-bars"></i>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <!-- Main part center part of spotify -->
+        <main>
+            <div class="main-left">
+                <div class="library">
+                    <!-- Header -->
+                    <div class="library-header">
+                        <h3>Your Library</h3>
+                        <button class="create-btn">
+                            <span>+</span> Create
+                        </button>
+                    </div>
+
+                    <div class="library-scroll">
+                        <!-- Playlist Card 1 -->
+                        <div class="library-card">
+                            <h4>Create your first playlist</h4>
+                            <p>It's easy, we'll help you</p>
+                            <button class="primary-btn">Create playlist</button>
+                        </div>
+
+                        <!-- Playlist Card 2 -->
+                        <div class="library-card">
+                            <h4>Let's find some podcasts to follow</h4>
+                            <p>It's easy, we'll help you</p>
+                            <button class="primary-btn">Create playlist</button>
+                        </div>
+                    </div>
+
+                    <!-- Footer Links -->
+                    <div class="library-links">
+                        <a href="#">Legal</a>
+                        <a href="#">Safety & Privacy Center</a>
+                        <a href="#">Privacy Policy</a>
+                        <a href="#">Cookies</a>
+                        <a href="#">About Ads</a>
+                        <a href="#">Accessibility</a>
+                        <a href="#" class="cookie-bold">Cookies</a>
+                    </div>
+
+                    <!-- Language Selector -->
+                    <div class="language">
+                        <button class="language-btn">🌐 English</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="main-right">
+                <section class="trending-song">
+                    <div class="heading">
+                        <h3>Trending songs</h3>
+                        <p>Show all</p>
+                    </div>
+                    <div class="card-container">
+                        <div class="rectangle-card">
+                            <figure>
+                                <img
+                                    src="images/ab67616d00001e02ba52c35bca6b280c7a9233ce.jpg"
+                                    alt=""
+                                />
+                                <button class="play-btn">
+                                    <i class="fa-solid fa-play"></i>
+                                </button>
+                            </figure>
+
+                            <h4>Tareefan</h4>
+                            <p>Sonu Thukral, Fukra</p>
+                            <p>Insaan, Kanika Mann</p>
+                        </div>
+
+                        <div class="rectangle-card">
+                            <figure>
+                                <img
+                                    src="images/ab676161000051748de0e6e7e55d7773931ab7f4.jpg"
+                                    alt=""
+                                />
+                                <button class="play-btn">
+                                    <i class="fa-solid fa-play"></i>
+                                </button>
+                            </figure>
+
+                            <h4>Tareefan</h4>
+                            <p>Sonu Thukral, Fukra</p>
+                            <p>Insaan, Kanika Mann</p>
+                        </div>
+
+                        <div class="rectangle-card">
+                            <figure>
+                                <img
+                                    src="images/ab67616100005174bc7e4fffd515b47ff1ebbc1f.jpg"
+                                    alt=""
+                                />
+                                <button class="play-btn">
+                                    <i class="fa-solid fa-play"></i>
+                                </button>
+                            </figure>
+
+                            <h4>Tareefan</h4>
+                            <p>Sonu Thukral, Fukra</p>
+                            <p>Insaan, Kanika Mann</p>
+                        </div>
+
+                        <div class="rectangle-card">
+                            <figure>
+                                <img
+                                    src="images/ab67616d00001e020097e55317238f0a7dce13f6.jpg"
+                                    alt=""
+                                />
+                                <button class="play-btn">
+                                    <i class="fa-solid fa-play"></i>
+                                </button>
+                            </figure>
+
+                            <h4>Tareefan</h4>
+                            <p>Sonu Thukral, Fukra</p>
+                            <p>Insaan, Kanika Mann</p>
+                        </div>
+
+                        <div class="rectangle-card">
+                            <figure>
+                                <img
+                                    src="images/ab67616d00001e020229259b8740d9861b69903a.jpg"
+                                    alt=""
+                                />
+                                <button class="play-btn">
+                                    <i class="fa-solid fa-play"></i>
+                                </button>
+                            </figure>
+
+                            <h4>Tareefan</h4>
+                            <p>Sonu Thukral, Fukra</p>
+                            <p>Insaan, Kanika Mann</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="trending-song">
+                    <div class="heading">
+                        <h3>Popular artists</h3>
+                        <p>Show all</p>
+                    </div>
+                    <div class="card-container">
+                        <div class="circle-card">
+                            <figure>
+                                <img src="images/Pritam.jpg" alt="" />
+                                <button class="play-btn-circle">
+                                    <i class="fa-solid fa-play"></i>
+                                </button>
+                            </figure>
+
+                            <h4>Tareefan</h4>
+                            <p>Sonu Thukral, Fukra</p>
+                            <p>Insaan, Kanika Mann</p>
+                        </div>
+
+                        <div class="circle-card">
+                            <figure>
+                                <img src="images/ar-rahman.jpg" alt="" />
+                                <button class="play-btn-circle">
+                                    <i class="fa-solid fa-play"></i>
+                                </button>
+                            </figure>
+
+                            <h4>Tareefan</h4>
+                            <p>Sonu Thukral, Fukra</p>
+                            <p>Insaan, Kanika Mann</p>
+                        </div>
+
+                        <div class="circle-card">
+                            <figure>
+                                <img src="images/Arjit Singh.jpg" alt="" />
+                                <button class="play-btn-circle">
+                                    <i class="fa-solid fa-play"></i>
+                                </button>
+                            </figure>
+
+                            <h4>Tareefan</h4>
+                            <p>Sonu Thukral, Fukra</p>
+                            <p>Insaan, Kanika Mann</p>
+                        </div>
+
+                        <div class="circle-card">
+                            <figure>
+                                <img src="images/vishal-shekhar.jpg" alt="" />
+                                <button class="play-btn-circle">
+                                    <i class="fa-solid fa-play"></i>
+                                </button>
+                            </figure>
+
+                            <h4>Tareefan</h4>
+                            <p>Sonu Thukral, Fukra</p>
+                            <p>Insaan, Kanika Mann</p>
+                        </div>
+
+                        <div class="circle-card">
+                            <figure>
+                                <img src="images/Sachin-Jigar.jpg" alt="" />
+                                <button class="play-btn-circle">
+                                    <i class="fa-solid fa-play"></i>
+                                </button>
+                            </figure>
+
+                            <h4>Tareefan</h4>
+                            <p>Sonu Thukral, Fukra</p>
+                            <p>Insaan, Kanika Mann</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="trending-song">
+                    <div class="heading">
+                        <h3>Popular albums and singles</h3>
+                        <p>Show all</p>
+                    </div>
+                    <div class="card-container">
+                        <div class="rectangle-card">
+                            <figure>
+                                <img
+                                    src="images/ab67616d00001e021aa5adad8593923dcdf1a7d0.jpg"
+                                    alt=""
+                                />
+                                <button class="play-btn">
+                                    <i class="fa-solid fa-play"></i>
+                                </button>
+                            </figure>
+
+                            <h4>Tareefan</h4>
+                            <p>Sonu Thukral, Fukra</p>
+                            <p>Insaan, Kanika Mann</p>
+                        </div>
+
+                        <div class="rectangle-card">
+                            <figure>
+                                <img
+                                    src="images/ab67616d00001e0220cd43e3df3eb7c506c55d13.jpg"
+                                    alt=""
+                                />
+                                <button class="play-btn">
+                                    <i class="fa-solid fa-play"></i>
+                                </button>
+                            </figure>
+
+                            <h4>Tareefan</h4>
+                            <p>Sonu Thukral, Fukra</p>
+                            <p>Insaan, Kanika Mann</p>
+                        </div>
+
+                        <div class="rectangle-card">
+                            <figure>
+                                <img
+                                    src="images/ab67616d00001e02347f6136e4f63cd00675bed2.jpg"
+                                    alt=""
+                                />
+                                <button class="play-btn">
+                                    <i class="fa-solid fa-play"></i>
+                                </button>
+                            </figure>
+
+                            <h4>Tareefan</h4>
+                            <p>Sonu Thukral, Fukra</p>
+                            <p>Insaan, Kanika Mann</p>
+                        </div>
+
+                        <div class="rectangle-card">
+                            <figure>
+                                <img
+                                    src="images/ab67616d00001e02351acac1153cba53c44c2c59.jpg"
+                                    alt=""
+                                />
+                                <button class="play-btn">
+                                    <i class="fa-solid fa-play"></i>
+                                </button>
+                            </figure>
+
+                            <h4>Tareefan</h4>
+                            <p>Sonu Thukral, Fukra</p>
+                            <p>Insaan, Kanika Mann</p>
+                        </div>
+
+                        <div class="rectangle-card">
+                            <figure>
+                                <img
+                                    src="images/ab67616d00001e0251c094617dd8c2bb0017ee25.jpg"
+                                    alt=""
+                                />
+                                <button class="play-btn">
+                                    <i class="fa-solid fa-play"></i>
+                                </button>
+                            </figure>
+
+                            <h4>Tareefan</h4>
+                            <p>Sonu Thukral, Fukra</p>
+                            <p>Insaan, Kanika Mann</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="trending-song">
+                    <div class="heading">
+                        <h3>Popular radio</h3>
+                        <p>Show all</p>
+                    </div>
+                    <div class="card-container">
+                        <div class="rectangle-card">
+                            <figure>
+                                <img src="images/en (1).jpg" alt="" />
+                                <button class="play-btn">
+                                    <i class="fa-solid fa-play"></i>
+                                </button>
+                            </figure>
+
+                            <h4>Tareefan</h4>
+                            <p>Sonu Thukral, Fukra</p>
+                            <p>Insaan, Kanika Mann</p>
+                        </div>
+
+                        <div class="rectangle-card">
+                            <figure>
+                                <img src="images/en (2).jpg" alt="" />
+                                <button class="play-btn">
+                                    <i class="fa-solid fa-play"></i>
+                                </button>
+                            </figure>
+
+                            <h4>Tareefan</h4>
+                            <p>Sonu Thukral, Fukra</p>
+                            <p>Insaan, Kanika Mann</p>
+                        </div>
+
+                        <div class="rectangle-card">
+                            <figure>
+                                <img src="images/en (3).jpg" alt="" />
+                                <button class="play-btn">
+                                    <i class="fa-solid fa-play"></i>
+                                </button>
+                            </figure>
+
+                            <h4>Tareefan</h4>
+                            <p>Sonu Thukral, Fukra</p>
+                            <p>Insaan, Kanika Mann</p>
+                        </div>
+
+                        <div class="rectangle-card">
+                            <figure>
+                                <img src="images/en (4).jpg" alt="" />
+                                <button class="play-btn">
+                                    <i class="fa-solid fa-play"></i>
+                                </button>
+                            </figure>
+
+                            <h4>Tareefan</h4>
+                            <p>Sonu Thukral, Fukra</p>
+                            <p>Insaan, Kanika Mann</p>
+                        </div>
+
+                        <div class="rectangle-card">
+                            <figure>
+                                <img src="images/en (5).jpg" alt="" />
+                                <button class="play-btn">
+                                    <i class="fa-solid fa-play"></i>
+                                </button>
+                            </figure>
+
+                            <h4>Tareefan</h4>
+                            <p>Sonu Thukral, Fukra</p>
+                            <p>Insaan, Kanika Mann</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="trending-song">
+                    <div class="heading">
+                        <h3>Featured Charts</h3>
+                        <p>Show all</p>
+                    </div>
+                    <div class="card-container">
+                        <div class="rectangle-card">
+                            <figure>
+                                <img
+                                    src="images/region_global_default (1).jpg"
+                                    alt=""
+                                />
+                                <button class="play-btn">
+                                    <i class="fa-solid fa-play"></i>
+                                </button>
+                            </figure>
+
+                            <h4>Tareefan</h4>
+                            <p>Sonu Thukral, Fukra</p>
+                            <p>Insaan, Kanika Mann</p>
+                        </div>
+
+                        <div class="rectangle-card">
+                            <figure>
+                                <img
+                                    src="images/region_global_default (2).jpg"
+                                    alt=""
+                                />
+                                <button class="play-btn">
+                                    <i class="fa-solid fa-play"></i>
+                                </button>
+                            </figure>
+
+                            <h4>Tareefan</h4>
+                            <p>Sonu Thukral, Fukra</p>
+                            <p>Insaan, Kanika Mann</p>
+                        </div>
+
+                        <div class="rectangle-card">
+                            <figure>
+                                <img
+                                    src="images/region_global_default.jpg"
+                                    alt=""
+                                />
+                                <button class="play-btn">
+                                    <i class="fa-solid fa-play"></i>
+                                </button>
+                            </figure>
+
+                            <h4>Tareefan</h4>
+                            <p>Sonu Thukral, Fukra</p>
+                            <p>Insaan, Kanika Mann</p>
+                        </div>
+
+                        <div class="rectangle-card">
+                            <figure>
+                                <img
+                                    src="images/region_in_default (1).jpg"
+                                    alt=""
+                                />
+                                <button class="play-btn">
+                                    <i class="fa-solid fa-play"></i>
+                                </button>
+                            </figure>
+
+                            <h4>Tareefan</h4>
+                            <p>Sonu Thukral, Fukra</p>
+                            <p>Insaan, Kanika Mann</p>
+                        </div>
+
+                        <div class="rectangle-card">
+                            <figure>
+                                <img
+                                    src="images/region_in_default (2).jpg"
+                                    alt=""
+                                />
+                                <button class="play-btn">
+                                    <i class="fa-solid fa-play"></i>
+                                </button>
+                            </figure>
+
+                            <h4>Tareefan</h4>
+                            <p>Sonu Thukral, Fukra</p>
+                            <p>Insaan, Kanika Mann</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Main Section Footer -->
+
+                <section class="main-footer">
+                    <div class="main-footer-container">
+                        <!-- Column 1 -->
+                        <div class="main-footer-col">
+                            <h4>Company</h4>
+                            <ul>
+                                <li><a href="#">About</a></li>
+                                <li><a href="#">Jobs</a></li>
+                                <li><a href="#">For the Record</a></li>
+                            </ul>
+                        </div>
+
+                        <!-- Column 2 -->
+                        <div class="main-footer-col">
+                            <h4>Communities</h4>
+                            <ul>
+                                <li><a href="#">For Artists</a></li>
+                                <li><a href="#">Developers</a></li>
+                                <li><a href="#">Advertising</a></li>
+                                <li><a href="#">Investors</a></li>
+                                <li><a href="#">Vendors</a></li>
+                            </ul>
+                        </div>
+
+                        <!-- Column 3 -->
+                        <div class="main-footer-col">
+                            <h4>Useful links</h4>
+                            <ul>
+                                <li><a href="#">Support</a></li>
+                                <li><a href="#">Free Mobile App</a></li>
+                                <li>
+                                    <a href="#" class="underline"
+                                        >Popular by Country</a
+                                    >
+                                </li>
+                                <li><a href="#">Import your music</a></li>
+                            </ul>
+                        </div>
+
+                        <!-- Column 4 -->
+                        <div class="main-footer-col">
+                            <h4>Spotify Plans</h4>
+                            <ul>
+                                <li><a href="#">Premium Lite</a></li>
+                                <li><a href="#">Premium Standard</a></li>
+                                <li><a href="#">Premium Platinum</a></li>
+                                <li><a href="#">Premium Student</a></li>
+                                <li><a href="#">Spotify Free</a></li>
+                            </ul>
+                        </div>
+
+                        <!-- Social Icons -->
+                        <div class="main-footer-social">
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Bottom line -->
+                    <div class="main-footer-bottom">
+                        <p>© 2026 Spotify AB</p>
+                    </div>
+                </section>
+            </div>
+        </main>
+
+        <footer>
+            <section class="footer-section">
+                <div class="preview-content">
+                    <div class="preview-text">
+                        <h4>Preview of Spotify</h4>
+                        <p>
+                            Sign up to get unlimited songs and podcasts with
+                            occasional ads. No credit card needed.
+                        </p>
+                    </div>
+
+                    <button class="signup-btn">Sign up free</button>
+                </div>
+            </section>
+
+            <!-- Bottom Navigation -->
+            <nav class="bottom-nav">
+                <a href="#" class="nav-item active">
+                    <i class="fa-solid fa-house"></i>
+                    <span>Home</span>
+                </a>
+
+                <a href="#" class="nav-item">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <span>Search</span>
+                </a>
+
+                <a href="#" class="nav-item">
+                    <i class="fa-solid fa-book"></i>
+                    <span>Your Library</span>
+                </a>
+
+                <a href="#" class="nav-item">
+                    <i class="fa-brands fa-spotify"></i>
+                    <span>Premium</span>
+                </a>
+            </nav>
+        </footer>
+
+        <script src="js/script.js"></script>
+    </body>
+</html>

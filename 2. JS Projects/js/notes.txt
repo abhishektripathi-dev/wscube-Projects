@@ -1,0 +1,213 @@
+1. Arithmetic Operators
+
++	Addition	3 + 4  // 7
+
+-	Subtraction	5 - 3  // 2
+
+*	Multiplication	2 * 3  // 6
+
+/	Division	4 / 2  // 2
+
+%	Remainder	5 % 2  // 1
+
+++ Increment (increments by 1)	++5 or 5++  // 6
+
+-- Decrement (decrements by 1)	--4 or 4--  // 3
+
+** Exponentiation (Power)	4 ** 2  // 16 right to left
+
+PEDMAS
+
+2. Assignment Operators
+
+= --> Associativity right to left
+
++= , -=, *=, /=, %=, **=
+
+
+3. Comparison Operators
+
+== type coersion
+=== (strickly equal to) --> Strict equality (===) does NO type coercion
+1==2==0 (type coercion)
+1===2===0 
+3+2+"cats"=== "5cats"
+
+>,<, >=, <=, !=
+
+4. Logical Operators
+
+&& (Logical AND)	
+expression1 && expression2	
+true only if both expression1 and expression2 are true
+
+|| (Logical OR)	
+expression1 || expression2	
+true if either expression1 or expression2 is true
+
+! (Logical NOT)	!expression	false if expression is true and vice versa
+
+
+Comment
+
+1. Single-line comments (//)
+2. Multi-line comments (/* */)
+
+Truthy and Falsy Value
+
+
+JS Type Conversion
+
+1. Implicit Conversion - Automatic type conversion.
+2. Explicit Conversion - Manual type conversion.
+
+1. Implicit Conversion:
+Coding Challenges
+
+**Challenge 1:**
+
+let x = 10;
+let y = "5";
+
+let result = x - y;
+
+console.log(result);
+
+
+**Challenge 2:**
+
+let num = 20;
+let str = "10";
+
+let result = num / str;
+
+console.log(result);
+
+
+
+**Challenge 3:**
+
+let a = 3;
+let b = "2";
+
+let result = a + b;
+
+console.log(result);
+
+**Challenge 4:**
+
+true
+
+**Challenge 5:**
+
+let num = 10;
+let str = "abc";
+
+let result = num * str;
+
+console.log(result);
+
+
+
+### Multiple Choice Questions
+
+1. What is the result of the following expression: 5 + "2"?
+    - a) 7
+    - b) "52"
+    - c) 52
+2. Which operator triggers string concatenation in JavaScript?
+    - a) +
+    - b) -
+    - c) %
+3. What is the result of the following expression: true + false?
+    - a) 1
+    - b) true
+    - c) false
+4. Which comparison operator can lead to type coercion?
+    - a) ===
+    - b) !==
+    - c) ==
+5. What is the result of the following expression: "10" * 2?
+    - a) 20
+    - b) 12
+    - c) NaN
+    
+
+Lexical Scope
+
+Lexical scope means that the scope (accessibility of variables) is determined by the physical location of code at the time it is written, not when it is executed.
+
+let name = "Global";
+
+function printName() {
+  console.log(name);
+}
+
+function test() {
+  let name = "Local";
+  printName();
+}
+
+test();
+
+
+Callback
+
+A function passed as an argument to another function, which is executed later.
+
+function greet(name) {
+  console.log("Hello " + name);
+}
+
+function demo(callback) {
+  let name = "Abhishek";
+  callback(name);
+}
+
+demo(greet);
+
+
+map()
+
+1. Iterates over each element of an array
+2. Returns a new array of same length
+3. Does NOT modify the original array
+
+let arr = [1, 2, 3, 4];
+
+let doubled = arr.map(el => el * 2);
+
+console.log(doubled);   // [2, 4, 6, 8]
+console.log(arr);   // [1, 2, 3, 4] (unchanged)
+
+
+filter()
+
+1. Iterates over each element
+2. Executes a callback for each element
+3. Returns a new array with less or same length
+4. Does NOT modify the original array
+
+let arr = [1, 2, 3, 4, 5];
+
+let even = arr.filter(num => num % 2 === 0);
+
+console.log(even);    // [2, 4]
+console.log(arr); // [1,2,3,4,5] (unchanged)
+
+
+forEach()
+
+forEach() is a array method used to iterate over elements of an array
+
+
+Executes a callback for each element
+Does not return anything (undefined)
+Does not create a new array
+Is mainly used for side effects
+
+let arr = [1, 2, 3];
+
+arr.forEach(num => {
+  console.log(num * 2);
+});

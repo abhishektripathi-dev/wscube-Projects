@@ -1,0 +1,29 @@
+@media only screen and (min-width: 200px) and (max-width: 575px) {
+    .btn-outer {
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        justify-content: center !important;
+        left: 0;
+    }
+
+    .imgLogo {
+        width: 155px;
+    }
+
+    .btnWhatsapp, .btnCall{
+        padding: 7px 12px;
+        font-size: 14px;
+    }
+}
+
+@media (min-width: 1400px) {
+    .container,
+    .container-lg,
+    .container-md,
+    .container-sm,
+    .container-xl,
+    .container-xxl {
+        max-width: 1170px;
+    }
+}

@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <section class="faqSection">
+            <h2>Faq</h2>
+
+            <div class="faqMid">
+                <div class="faqItem">
+                    <h3>1 How do I book a taxi? <span>+</span></h3>
+                    <div class="ans">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Voluptatem hic quia perferendis, veniam exercitationem
+                        minus cumque eaque! Mollitia assumenda soluta minus
+                        laborum est delectus, cum cumque tempore voluptat
+                    </div>
+                </div>
+                <div class="faqItem">
+                    <h3>
+                        2 What areas do you cover in Leicester?? <span>+</span>
+                    </h3>
+                    <div class="ans">
+                        Leicester and major UK airports, seaports, and
+                        long-distance destinations.
+                    </div>
+                </div>
+                <div class="faqItem">
+                    <h3>
+                        3 What areas do you cover in Leicester?? <span>+</span>
+                    </h3>
+                    <div class="ans">
+                        Leicester and major UK airports, seaports, and
+                        long-distance destinations.
+                    </div>
+                </div>
+                <div class="faqItem">
+                    <h3>
+                        4 What areas do you cover in Leicester?? <span>+</span>
+                    </h3>
+                    <div class="ans">
+                        Leicester and major UK airports, seaports, and
+                        long-distance destinations.
+                    </div>
+                </div>
+                <div class="faqItem">
+                    <h3>
+                        5 What areas do you cover in Leicester?? <span>+</span>
+                    </h3>
+                    <div class="ans">
+                        Leicester and major UK airports, seaports, and
+                        long-distance destinations.
+                    </div>
+                </div>
+            </div>
+        </section>
+    </body>
+    <script>
+        let l = [10, 20, 30, 40];
+
+        // l.forEach((v,i)=>{
+        //     console.log(v,i);
+
+        // })
+
+        let allHeading = document.querySelectorAll(".faqItem h3");
+
+        allHeading.forEach((h, index) => {
+            h.addEventListener("click", () => {
+                //Other Heading Ans Hide
+                //Other Heading Span +
+                allHeading.forEach((heading, i) => {
+                    if (i != index) {
+                        heading.nextElementSibling.classList.remove("showAns");
+                        heading.lastElementChild.innerHTML = "+";
+                    }
+                });
+                console.log("Clicked Question", h, index); //1 Current Heading Click
+                if (h.lastElementChild.innerHTML == "+") {
+                    h.lastElementChild.innerHTML = "-";
+                } else {
+                    h.lastElementChild.innerHTML = "+";
+                }
+                h.nextElementSibling.classList.toggle("showAns");
+                // alert(index)
+            });
+            //h=  <h3>1 How do I book a taxi?</h3>.addEventListener -- 0
+            //h=  <h3>2 How do I book a taxi?</h3>.addEventListener --1
+            //h=  <h3>3 How do I book a taxi?</h3>.addEventListener --2
+            //h=  <h3>4 How do I book a taxi?</h3>.addEventListener --3
+            //h=  <h3>5 How do I book a taxi?</h3>.addEventListener --4
+        });
+
+        // console.log(allHeading);
+
+        // console.log(allHeading[1].innerHTML); //2 What areas do you cover in Leicester??
+        //<h3>2 What areas do you cover in Leicester??</h3>
+
+        //Node List | HTML Collection
+
+        // let question=['<h3>We</h3>','']
+    </script>
+</html>

@@ -1,0 +1,26 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
+* {
+    font-family: "Inter", sans-serif;
+}
+
+/* .btnWhatsapp {
+    border: 1px solid #27ae60;
+    color: #27ae60;
+}
+
+.btnWhatsapp i {
+    color: #27ae60;
+}
+
+.btnWhatsapp:hover {
+    border: 1px solid #27ae60;
+    color: #27ae60;
+} */
+
+
+.btnCall {
+    background: linear-gradient(to right, #0acefe, #2699fb);
+    color: white;
+    border: 1px solid #2699fb;
+}

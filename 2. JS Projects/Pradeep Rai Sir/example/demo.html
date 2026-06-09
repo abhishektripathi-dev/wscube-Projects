@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+
+</body>
+<script>
+
+let logoutTimer;
+
+function resetTimer() {
+  clearTimeout(logoutTimer);
+  
+  console.log("Welcome")
+  logoutTimer = setTimeout(() => {
+  	console.log(logoutTimer)
+    alert("Session expired! Logging out...");
+    window.location.href = "https://www.wscubetech.com/";
+  }, 5000); // 5 sec demo
+
+
+}
+
+document.addEventListener("mouseover",resetTimer)
+document.addEventListener("keypress",resetTimer)
+// document.onmousemove = resetTimer;
+// document.onkeypress = resetTimer;
+
+resetTimer();
+</script>
+</html>

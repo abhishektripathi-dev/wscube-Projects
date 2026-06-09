@@ -1,0 +1,691 @@
+/*
+Developer Notes:
+File: assets/CSS/style.css
+Purpose: Main stylesheet for the Newsroom page. This file contains variables,
+global resets, layout rules, and component styles (navbar, megamenu, banners,
+news cards, footer). The order is intentional to preserve cascade and specificity.
+Sections (in order):
+    1. Import & CSS variables
+    2. Global reset + image defaults
+    3. Main Navbar (top navigation)
+    4. Mega Menu
+    5. Header
+    6. Sub Navbar and dropdowns
+    7. Banner Section
+    8. Recent News Section
+    9. More News / See More
+ 10. Footer
+
+Only comments were added for developer clarity — no CSS rules were modified.
+*/
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
+:root {
+    /* --primary-color:;
+    --secondary-color:; */
+
+    --text-color: rgb(52, 72, 84);
+    --secondary-text-color: rgb(28, 43, 51);
+
+    --black: #000;
+    --white: #fff;
+
+    --bg-color: rgb(227, 227, 229);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    font-family: "Inter", sans-serif;
+}
+
+img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+img {
+    transition: 500ms;
+}
+
+img:hover {
+    transform: scale(1.05);
+}
+
+/* Main Navbar */
+
+.main-navbar {
+    display: flex;
+    border-bottom: 1px solid #ccc;
+    padding: 0px 40px;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.main-navbar figure {
+    flex-basis: 9%;
+}
+
+.main-navbar nav {
+    flex-grow: 1;
+    display: flex;
+    justify-content: space-between;
+}
+
+.main-navbar nav > ul {
+    display: flex;
+}
+
+.main-navbar nav > ul > li {
+    padding: 30px;
+}
+
+.main-navbar nav > ul > li > a {
+    color: var(--black);
+    padding: 10px;
+    transition: background-color 500ms;
+    border-radius: 20px;
+}
+
+.main-navbar nav > ul > li > a:hover {
+    background-color: var(--bg-color);
+}
+
+.main-navbar-btn {
+    flex-basis: 5%;
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    border-left: 1px solid #ccc;
+}
+
+.main-navbar-btn button {
+    background-color: var(--white);
+    border: none;
+    cursor: pointer;
+    color: var(--secondary-text-color);
+    font-size: 16px;
+}
+/* =========================
+   MEGA MENU 
+========================= */
+
+.main-navbar {
+    position: relative;
+}
+
+/* Mega Menu Container */
+.mega-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: #fff;
+    padding: 50px 120px;
+    display: grid;
+    grid-template-columns: 220px 220px repeat(3, 1fr);
+    gap: 60px;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s ease;
+    z-index: 1000;
+    border-top: 1px solid #e5e5e5;
+}
+
+/* Show on Hover */
+.main-navbar nav > ul > li:hover .mega-menu {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* For blur the content */
+.main-navbar:hover ~ .page-content {
+    filter: blur(10px);
+}
+
+/* Left Text Columns */
+.mega-menu-item h4 {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #6b7280;
+}
+
+.mega-menu-item ul li {
+    font-size: 15px;
+    margin-bottom: 14px;
+    cursor: pointer;
+    color: #111;
+    transition: 0.2s ease;
+}
+
+.mega-menu-item ul li:hover {
+    opacity: 0.6;
+}
+
+/* Product Columns */
+.mega-menu-item figure {
+    width: 160px;
+    margin: 0 auto 20px;
+}
+
+.mega-menu-item img {
+    width: 100%;
+    height: auto;
+    transition: 0.3s ease;
+}
+
+.mega-menu-item img:hover {
+    transform: scale(1.05);
+}
+
+.mega-menu-item p {
+    text-align: center;
+    font-size: 15px;
+    margin-bottom: 6px;
+    font-weight: 500;
+}
+
+.mega-menu-item h5 {
+    text-align: center;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.mega-menu-item h5:hover {
+    opacity: 0.6;
+}
+
+/* Support Right-Aligned Mega Menu */
+.mega-menu-right {
+    grid-template-columns: repeat(3, 250px);
+    justify-content: end;
+}
+
+/* Header */
+
+header {
+    max-width: 1200px;
+    margin: auto;
+}
+
+header h1 {
+    text-align: center;
+    font-size: 64px;
+    font-weight: 500;
+    color: var(--secondary-text-color);
+    margin-top: 30px;
+}
+
+/* Sub Navbar */
+
+.sub-navbar {
+    width: 100%;
+    border-bottom: 1px solid #ccc;
+}
+
+.sub-navbar-mid {
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.sub-navbar nav > ul {
+    display: flex;
+}
+
+.sub-navbar nav > ul > li {
+    padding: 30px 12px;
+}
+
+.sub-navbar nav > ul > li > a {
+    color: var(--black);
+    padding: 10px;
+    transition: background-color 500ms;
+    border-radius: 20px;
+}
+
+.sub-navbar nav > ul > li > a:hover {
+    background-color: var(--bg-color);
+}
+
+/* Technologies Dropdown */
+
+.sub-navbar {
+    position: relative;
+}
+
+.tech-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100vw;
+    background: #fff;
+    padding: 25px 0;
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: transform 0.3s ease;
+    z-index: 999;
+}
+
+.tech-dropdown ul {
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.tech-dropdown ul li {
+    font-size: 15px;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.tech-dropdown ul li:hover {
+    opacity: 0.6;
+}
+
+/* Expand on hover */
+.tech-menu:hover .tech-dropdown {
+    transform: scaleY(1);
+}
+
+.page-content {
+    transition: filter 0.3s ease;
+}
+
+/* When Technologies is hovered */
+body:has(.tech-menu:hover) .banner-section {
+    filter: blur(8px);
+}
+
+.search-box {
+    display: flex;
+    position: relative;
+    align-items: center;
+}
+
+.search-box i {
+    position: absolute; /* Icon uses absolute positioning */
+    padding: 10px;
+    min-width: 40px;
+    text-align: center;
+    color: #aaa;
+    pointer-events: none; /* Allows clicks to pass through the icon to the input */
+}
+
+.search-box input {
+    width: 100%;
+    padding: 10px 10px 10px 40px; /* Add left padding for the icon space */
+    border: 1px solid #ccc;
+    border-radius: 25px;
+}
+
+/* Banner Section */
+
+.banner-section {
+    width: 100%;
+    padding: 30px 0px;
+    border-bottom: 1px solid #ccc;
+}
+
+.banner-mid {
+    max-width: 1250px;
+    margin: auto;
+    display: flex;
+}
+
+.banner-mid div {
+    flex-basis: 48%;
+    margin: 1%;
+}
+
+.banner-mid figure {
+    overflow: hidden;
+    border-radius: 25px;
+}
+
+.banner-left article h4 {
+    font-size: 12px;
+    font-weight: 600;
+    color: rgb(35, 35, 35);
+    border-bottom: 1px solid rgb(24, 119, 242);
+    display: inline-block;
+}
+
+.banner-left article h2 {
+    font-size: 26px;
+    font-weight: 500;
+    letter-spacing: 1.8px;
+    line-height: 36px;
+    color: var(--black);
+    cursor: pointer;
+    padding: 10px 0px;
+    transition: 0.25s ease-out;
+}
+
+.banner-left article h2:hover {
+    opacity: 0.8;
+}
+
+.banner-left article p {
+    font-size: 18px;
+    line-height: 27px;
+    letter-spacing: 0.9px;
+    color: rgb(102, 102, 102);
+    margin: 10px 0px;
+}
+
+.banner-left article time {
+    font-size: 14px;
+    line-height: 18px;
+    letter-spacing: 0.14px;
+    color: rgb(80, 94, 107);
+}
+
+.banner-right div {
+    display: flex;
+    gap: 4%;
+    margin-bottom: 20px;
+    align-items: flex-start;
+}
+
+.banner-right div figure {
+    flex-basis: 36%;
+    margin: 1%;
+}
+
+.banner-right div article {
+    flex-basis: 56%;
+    margin: 1%;
+}
+
+.banner-right div article h5 {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 600;
+    color: rgb(35, 35, 35);
+    border-bottom: 1px solid rgb(58, 58, 58);
+    padding-bottom: 3px;
+    margin-bottom: 7px;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: 0.25s ease-out;
+}
+
+.banner-right div article h5:hover {
+    opacity: 0.8;
+}
+
+.banner-right div article h4 {
+    color: var(--black);
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 0.36px;
+    line-height: 27px;
+    transition: 0.25s ease-out;
+    margin: 10px 0px;
+}
+
+.banner-right div article h4:hover {
+    opacity: 0.8;
+}
+
+.banner-right div article p {
+    letter-spacing: 0.8px;
+    line-height: 24px;
+    margin-bottom: 10px;
+    color: rgb(102, 102, 102);
+}
+
+.banner-right div article time {
+    font-size: 14px;
+    color: rgb(80, 94, 107);
+    letter-spacing: 0.14px;
+    line-height: 18px;
+}
+
+/* Recent News Section  */
+
+.recent-news-section {
+    width: 100%;
+    padding: 50px 0px;
+}
+
+.recent-news-mid {
+    max-width: 1250px;
+    margin: auto;
+}
+
+.recent-news-mid h4 {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    letter-spacing: 0.24px;
+    color: rgb(28, 43, 51);
+}
+
+.recent-news-mid h4 i {
+    margin-right: 10px;
+}
+
+.recent-cards {
+    display: flex;
+    flex-wrap: wrap;
+    /* gap: 4%; */
+}
+
+.recent-cards div {
+    flex-basis: 48%;
+    display: flex;
+    align-items: center;
+    gap: 5%;
+    margin-bottom: 20px;
+}
+
+.recent-cards div figure {
+    flex-basis: 36%;
+    margin: 1%;
+    border-radius: 25px;
+    overflow: hidden;
+}
+
+.recent-cards div article {
+    flex-basis: 55%;
+    margin: 1%;
+}
+
+/* See More News Section */
+
+.more-news-section {
+    width: 100%;
+    padding: 50px 0px;
+    border-bottom: 1px solid #ccc;
+}
+
+.more-news-mid {
+    max-width: 1250px;
+    margin: auto;
+}
+
+.more-news-top {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    cursor: pointer;
+    transition: 0.25s ease-out;
+    margin-bottom: 100px;
+}
+
+.more-news-top button {
+    font-size: 20px;
+    border-radius: 50%;
+    cursor: pointer;
+    color: rgb(28, 43, 51);
+    border: 1px solid rgb(28, 43, 51);
+    background-color: var(--white);
+    padding: 5px;
+}
+
+.more-news-top p {
+    color: rgb(28, 43, 51);
+    font-size: 20px;
+    letter-spacing: 0.54px;
+    line-height: 27px;
+}
+
+.more-news-top:hover {
+    opacity: 0.8;
+}
+
+.more-news-bottom {
+    display: flex;
+    justify-content: space-between;
+}
+
+.more-news-bottom div {
+    display: flex;
+}
+
+.more-news-bottom div p {
+    color: rgb(133, 149, 164);
+    font-size: 20px;
+    letter-spacing: 0.36px;
+    padding-right: 20px;
+    border-right: 1px solid #ccc;
+}
+
+.more-news-bottom div button {
+    background-color: #000;
+    color: var(--white);
+    border-radius: 50%;
+    margin: 0px 15px;
+    padding: 5px;
+    cursor: pointer;
+    border: none;
+    transition: 0.25s ease-out;
+}
+
+.more-news-bottom div button:hover {
+    opacity: 0.8;
+}
+
+.more-news-bottom div a {
+    color: #000;
+    padding: 0px 12px;
+    transition: 0.25s ease-out;
+}
+
+.more-news-bottom div a:hover {
+    opacity: 0.8;
+}
+
+/* Footer Section */
+
+footer {
+    width: 100%;
+    background: #f5f5f7;
+    padding: 60px 0 30px;
+    font-size: 14px;
+    color: #1c2b33;
+}
+
+.footer-mid {
+    margin: auto;
+    padding: 0 50px;
+}
+
+/* Top Footer Grid */
+.footer-top {
+    display: grid;
+    grid-template-columns: 220px 1fr 1fr 1fr 1fr;
+    gap: 60px;
+    align-items: flex-start;
+}
+
+/* First column (logo + social) */
+.footer-top > div:first-child {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Section Headings */
+.footer-top h4 {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 18px;
+}
+
+/* Lists */
+.footer-top ul li {
+    margin-bottom: 10px;
+}
+
+.footer-top ul li a {
+    color: #1c2b33;
+    font-size: 14px;
+    transition: 0.2s ease;
+}
+
+.footer-top ul li a:hover {
+    opacity: 0.6;
+}
+
+/* Social Icons */
+.social-icons {
+    display: flex;
+    gap: 15px;
+    font-size: 18px;
+}
+
+.social-icons i {
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.social-icons i:hover {
+    opacity: 0.6;
+}
+
+/* Bottom Bar */
+.bottom-bar {
+    margin-top: 60px;
+    padding-top: 20px;
+    /* border-top: 1px solid #ddd; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 13px;
+}
+
+.bottom-left {
+    display: flex;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.bottom-left a {
+    color: #1c2b33;
+    transition: 0.2s ease;
+}
+
+.bottom-left a:hover {
+    opacity: 0.6;
+}
+
+.bottom-right .locale {
+    cursor: pointer;
+}

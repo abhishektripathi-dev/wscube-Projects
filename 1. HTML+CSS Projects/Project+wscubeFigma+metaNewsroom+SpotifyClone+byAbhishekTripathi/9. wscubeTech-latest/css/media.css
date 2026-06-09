@@ -1,0 +1,539 @@
+/* Mobile View */
+
+@media only screen and (min-width: 200px) and (max-width: 575px) {
+    header {
+        padding-top: 0;
+    }
+
+    .headerMid {
+        flex-direction: column;
+        padding: 0px;
+    }
+
+    .headerMid figure {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .headerMid figure img {
+        width: 180px;
+    }
+
+    .btnOuter {
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        gap: 0;
+    }
+
+    .btnOuter button {
+        padding: 10px 18px;
+        border-radius: 0px;
+        font-size: 14px;
+        flex-basis: 50%;
+    }
+
+    .btnOuter button:nth-child(2) {
+        border: 1px solid var(--primary-color);
+    }
+
+    /* Hero Section */
+
+    .heroSection {
+        padding: 10px;
+    }
+
+    .heroMid {
+        flex-direction: column;
+        gap: 20px;
+        padding: 10px;
+    }
+
+    .heroContent h1 {
+        font-size: 30px;
+        text-align: center;
+    }
+
+    .heroContent h1 br {
+        display: none;
+    }
+
+    .heroContent p {
+        font-size: 15px;
+        line-height: 20px;
+        margin-top: 14px;
+        text-align: center;
+    }
+
+    .heroContent ul li {
+        font-size: 15px;
+        line-height: 21px;
+        margin-bottom: 7px;
+    }
+
+    .heroContent ul li i {
+        margin-right: 4px;
+    }
+
+    .heroBtn button:nth-child(1) {
+        font-size: 13px;
+        padding: 12px 0px;
+    }
+
+    .heroBtn button:nth-child(2) {
+        font-size: 13px;
+        padding: 12px 0px;
+    }
+
+    .heroForm::before {
+        display: none;
+    }
+
+    .heroForm form {
+        padding: 10px 30px;
+    }
+
+    /* Stats Section */
+
+    .statsSection {
+        padding: 20px;
+    }
+
+    .statsMid {
+        padding: 10px 20px;
+    }
+
+    .statsGrid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .statsGrid h4 {
+        font-size: 20px;
+        font-weight: 600;
+    }
+
+    .statsGrid p {
+        font-size: 12px;
+    }
+
+    /* Highlight Section */
+
+    .highlightSection {
+        padding: 20px 10px;
+    }
+
+    .highlightMid h2 {
+        font-size: 28px;
+        font-weight: 600;
+        margin-bottom: 5px;
+        text-align: center;
+    }
+
+    .highlightMid > p {
+        font-size: 14px;
+        line-height: 17px;
+        text-align: center;
+    }
+
+    .highlightGrid {
+        grid-template-columns: repeat(1, 1fr);
+        gap: 12px;
+    }
+
+    .highlightGrid h4 {
+        font-size: 15px;
+        font-weight: 600;
+    }
+
+    .highlightGrid > div {
+        gap: 10px;
+        padding: 2px;
+    }
+
+    .highlightBtn button {
+        padding: 11px 48px;
+        font-size: 15px;
+    }
+
+    .careerMid {
+        padding: 0px 10px;
+    }
+
+    .careerGrid {
+        grid-template-columns: repeat(1, 1fr);
+        gap: 0px;
+    }
+    .careerGrid div {
+        margin-top: 15px;
+    }
+    .careerGrid article {
+        margin-top: 15px;
+    }
+
+    .careerMid h2 {
+        font-size: 28px;
+    }
+
+    .careerMid > p {
+        font-size: 14px;
+        line-height: 21px;
+    }
+
+    .certificateMid {
+        padding: 0px 10px;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 30px;
+    }
+    .certificateMid h3 {
+        font-size: 27px;
+        text-align: center;
+    }
+
+    .certificateMid > article > p {
+        font-size: 15px;
+        line-height: 21px;
+        text-align: center;
+    }
+
+    .certificateCard {
+        margin-top: 15px;
+    }
+
+    .certificateCard p {
+        font-size: 14px;
+        line-height: 19px;
+    }
+
+    .certificateCard figure {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 30px 0px;
+    }
+
+    .certificateCard figure img {
+        width: 100%;
+        display: block;
+    }
+
+    .certificateBtn button {
+        font-size: 16px;
+        padding: 11px 29px;
+    }
+    .curriculumSection {
+        padding: 30px 0px;
+    }
+
+    .curriculumMid {
+        padding: 10px;
+    }
+
+    .curriculumMid h2 {
+        font-size: 25px;
+    }
+
+    .curriculumMid p {
+        font-size: 14px;
+        margin-bottom: 23px;
+    }
+
+    .curriculumMid hr {
+        margin-top: 3px;
+        margin-bottom: 0px;
+    }
+
+    .curriculumIntroduction {
+        grid-template-columns: repeat(1, 1fr);
+        padding: 11px;
+    }
+
+    .curriculumIntroduction li {
+        font-size: 14px;
+        line-height: 24px;
+    }
+
+    .curriculumIntroduction i {
+        margin-right: 4px;
+    }
+
+
+    .curriculumBtn button {
+        font-size: 13px;
+        padding: 10px 16px;
+        margin-top: 11px;
+    }
+
+    .learnSection {
+        padding: 20px 0px;
+    }
+
+    .learnMid {
+        padding: 10px;
+    }
+
+    .learnMid h3 {
+        font-size: 26px;
+        text-align: center;
+    }
+    .learnMid > p {
+        font-size: 14px;
+        text-align: center;
+    }
+    .learnGrid {
+        grid-template-columns: repeat(1, 1fr);
+        gap: 10px;
+    }
+
+    .leranCard h4 {
+        font-size: 18px;
+        margin-top: 10px;
+    }
+
+    .learnBtn button {
+        font-size: 13px;
+        padding: 10px 16px;
+        margin-top: 20px;
+    }
+
+    .leranCard p {
+        font-size: 14px;
+        line-height: 20px;
+        margin-top: 1px;
+    }
+
+    .leranCard img {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .studentSection {
+        padding: 25px 0px;
+    }
+
+    .studentCard > div {
+        gap: 0px;
+    }
+
+    .studentCard figure > img {
+        width: 85%;
+    }
+
+    .studentMid {
+        padding: 0px 10px;
+    }
+
+    .studentGrid {
+        grid-template-columns: repeat(1, 1fr);
+        gap: 10px;
+    }
+
+    .studentMid h2 {
+        font-size: 27px;
+    }
+
+    .studentMid > p {
+        font-size: 14px;
+        line-height: 22px;
+    }
+    .studentCard {
+        padding: 10px 20px;
+    }
+    .studentCard > article > p {
+        font-size: 14px;
+        line-height: 21px;
+    }
+
+    .studentCard article {
+        margin-top: 10px;
+    }
+
+    .readySection {
+        padding: 24px 1px;
+    }
+
+    .readyMid h2 {
+        font-size: 26px;
+    }
+
+    .readyMid p {
+        font-size: 14px;
+        line-height: 23px;
+        margin-bottom: 14px;
+    }
+
+    .readyBtn button {
+        font-size: 17px;
+        padding: 12px 26px;
+    }
+
+    .faqSection {
+        padding: 20px 10px;
+    }
+
+    .faqMid h2 {
+        font-size: 25px;
+    }
+
+    .faqMid > p {
+        font-size: 14px;
+        line-height: 23px;
+    }
+
+    .companiesMid {
+        padding: 10px;
+    }
+
+    .companiesMid h2 {
+        font-size: 22px;
+    }
+
+    .companiesMid img {
+        width: 100%;
+    }
+
+    footer {
+        padding-bottom: 50px;
+    }
+
+    footer p {
+        font-size: 14px;
+    }
+}
+
+/* Tablet View */
+
+@media only screen and (min-width: 576px) and (max-width: 991px) {
+    .heroForm::before {
+        display: none;
+    }
+
+    .heroContent h1 {
+        font-size: 40px;
+    }
+    .heroContent p {
+        font-size: 19px;
+        line-height: 27px;
+    }
+    .heroContent ul li {
+        font-size: 19px;
+        line-height: 26px;
+        margin-bottom: 7px;
+    }
+    .heroBtn button:nth-child(1) {
+        padding: 10px 4px;
+        font-size: 16px;
+    }
+
+    .heroBtn button:nth-child(2) {
+        padding: 10px 8px;
+        font-size: 15px;
+    }
+
+    .heroForm form {
+        padding: 30px 20px;
+    }
+    /* Stats Section*/
+
+    .statsSection {
+        padding: 20px;
+    }
+
+    .statsMid {
+        padding: 10px 20px;
+    }
+
+    .statsGrid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+    }
+
+    .highlightGrid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+
+    .highlightSection {
+        padding: 30px 10px;
+    }
+
+    .careerGrid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    .careerGrid article {
+        margin-top: 15px;
+    }
+
+    .careerMid {
+        padding: 0px 10px;
+    }
+
+    .certificateMid {
+        padding: 0px 10px;
+    }
+
+    .certificateMid > figure {
+        padding: 30px 30px;
+        background: var(--white);
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .curriculumIntroduction li {
+        font-size: 16px;
+        line-height: 34px;
+    }
+
+    .curriculumIntroduction i {
+        margin-right: 4px;
+    }
+
+    .curriculumMid {
+        padding: 10px;
+    }
+
+    .curriculumNavbar li:nth-child(5) {
+        display: none;
+    }
+
+    .learnMid {
+        padding: 10px;
+    }
+
+    .learnGrid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .learnMid h3 {
+        text-align: center;
+    }
+
+    .learnMid > p {
+        text-align: center;
+    }
+
+    .studentSection {
+        padding: 50px 10px;
+    }
+
+    .readySection {
+        padding: 50px 10px;
+    }
+
+    .faqSection {
+        padding: 50px 10px;
+    }
+
+    .companiesSection {
+        padding: 50px 10px;
+    }
+}

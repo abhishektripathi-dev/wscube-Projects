@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Static ToDo (HTML + CSS)</title>
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        />
+        <link rel="stylesheet" href="style.css">
+        <style>
+
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="header">
+                <i class="fa-solid fa-list"></i>
+                <h1>ToDo List</h1>
+            </div>
+
+            <div class="todoInput">
+                <input
+                    type="text"
+                    id="todo"
+                    placeholder="Add new task"
+                />
+                <button aria-label="Add">
+                    <i class="fa-solid fa-plus"></i>
+                </button>
+            </div>
+
+            <div class="todo-list">
+                <ul>
+                    <li>
+                        <input type="checkbox" id="t1" />
+                        <span class="custom-checkbox"></span>
+                        <label for="t1">Buy groceries</label>
+                        <button class="delete" aria-label="Delete">
+                            <i class="fa-solid fa-trash"></i>
+                        </button>
+                    </li>
+                    
+                </ul>
+            </div>
+
+            <script src="script.js">
+                
+            </script>
+        </div>
+    </body>
+</html>

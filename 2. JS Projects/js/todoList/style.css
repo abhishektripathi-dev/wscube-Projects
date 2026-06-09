@@ -1,0 +1,144 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(
+        90deg,
+        rgba(42, 123, 155, 1) 0%,
+        rgba(87, 199, 133, 1) 50%,
+        rgba(237, 221, 83, 1) 100%
+    );
+    padding: 24px;
+}
+
+.container {
+    width: 420px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+    padding: 18px;
+    overflow: hidden;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+.header i {
+    color: #2a7b9b;
+    font-size: 26px;
+}
+.header h1 {
+    font-size: 20px;
+    color: #333;
+    font-weight: 600;
+}
+
+.todoInput {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 16px;
+}
+.todoInput input[type="text"] {
+    flex: 1;
+    padding: 10px 12px;
+    border: 1px solid #e6e6e6;
+    border-radius: 8px;
+    font-size: 14px;
+    background: #fafafa;
+}
+
+.todoInput input[type="text"]:focus{
+    outline: 1px solid #2a7b9b;
+}
+
+.todoInput button {
+    background: #2a7b9b;
+    color: #fff;
+    border: none;
+    padding: 10px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.todo-list ul {
+    list-style: none;
+}
+.todo-list li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 8px;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.todo-list .delete {
+    margin-left: auto;
+    background: transparent;
+    border: none;
+    color: #d23b3b;
+    cursor: pointer;
+    padding: 6px 8px;
+    border-radius: 6px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+.todo-list .delete:hover {
+    background: rgba(210, 59, 59, 0.06);
+}
+.todo-list .delete i {
+    font-size: 14px;
+}
+
+/* hide native checkbox, use custom */
+.todo-list input[type="checkbox"] {
+    display: none;
+}
+.custom-checkbox {
+    width: 18px;
+    height: 18px;
+    border-radius: 4px;
+    border: 2px solid #ddd;
+    display: inline-block;
+    position: relative;
+}
+.todo-list input[type="checkbox"]:checked + .custom-checkbox {
+    background: linear-gradient(135deg, #2a7b9b, #57c785);
+    border-color: transparent;
+}
+.todo-list input[type="checkbox"]:checked + .custom-checkbox::after {
+    content: "✓";
+    position: absolute;
+    left: 2px;
+    top: -3px;
+    color: white;
+    font-size: 12px;
+}
+
+.todo-list label {
+    flex: 1;
+    cursor: pointer;
+    color: #333;
+    font-size: 15px;
+}
+.todo-list input[type="checkbox"]:checked + .custom-checkbox + label {
+    text-decoration: line-through;
+    color: #999;
+}
+
+.note {
+    font-size: 12px;
+    color: #666;
+    margin-top: 12px;
+    text-align: center;
+}

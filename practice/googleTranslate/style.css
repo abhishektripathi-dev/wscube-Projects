@@ -1,0 +1,89 @@
+body {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f9fa;
+    display: flex;
+    justify-content: center;
+    padding-top: 50px;
+    margin: 0;
+    top: 0px !important;
+}
+
+.container {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+    width: 100%;
+    max-width: 500px;
+}
+
+.header-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+/* The Dropdown UI */
+#google_translate_element {
+    border: 1px solid #ddd;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+label {
+    font-weight: 600;
+    color: #444;
+    display: block;
+    margin-bottom: 10px;
+}
+
+/* Input area - Stay in English */
+#engInput {
+    width: 100%;
+    height: 100px;
+    padding: 15px;
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;
+    font-size: 16px;
+    resize: none;
+    box-sizing: border-box;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+#engInput:focus {
+    border-color: #4285f4;
+}
+
+.arrow-down {
+    text-align: center;
+    margin: 15px 0;
+    color: #4285f4;
+    font-size: 24px;
+}
+
+/* Output area - This gets translated */
+.output-box {
+    width: 100%;
+    min-height: 100px;
+    padding: 15px;
+    background-color: #f1f5ff;
+    border: 2px solid #4285f4;
+    border-radius: 10px;
+    font-size: 18px;
+    color: #1a0dab;
+    box-sizing: border-box;
+    word-wrap: break-word;
+}
+
+/* Hide Google branding for a professional look */
+.goog-te-banner-frame,
+.goog-logo-link,
+.goog-te-gadget span {
+    display: none !important;
+}
+.goog-te-gadget {
+    color: transparent !important;
+}
+

@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            * {
+                margin: 0px;
+                padding: 0px;
+                font-family: sans-serif;
+                box-sizing: border-box;
+            }
+            body {
+                font-family: Arial, sans-serif;
+                background-color: #f0f0f0;
+                margin: 0;
+                padding: 20px;
+            }
+
+            .todoApp {
+                max-width: 400px;
+                margin: auto;
+
+                border-radius: 5px;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+                padding: 15px;
+            }
+            h2 {
+                text-align: center;
+                color: #333;
+            }
+            input[type="text"] {
+                width: 100%;
+                padding: 10px;
+                margin: 10px 0;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+            }
+
+            #taskList {
+                list-style-type: none;
+            }
+            #taskList li {
+                padding: 10px;
+                background-color: #f9f9f9;
+                border: 1px solid #ddd;
+                margin-bottom: 5px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            .toastify {
+                position: fixed;
+                background-color: green;
+                color: white;
+                text-align: left;
+                padding: 10px 30px;
+                right: 0px;
+                transition: 0.5s;
+                top: -400px;
+                font-size: 12px;
+            }
+            .toastify span {
+                position: absolute;
+                right: 10px;
+            }
+
+            .toastifyShow {
+                top: 10px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="toastify"></div>
+
+        <div class="todoApp">
+            <h2>To-Do List</h2>
+            <form>
+                <input
+                    name="userToDo"
+                    type="text"
+                    id="taskInput"
+                    placeholder="Add a new task..."
+                />
+
+                <!-- <input name="password" type="text" id="taskInput" placeholder="Add a new task..." /> -->
+                <button type="submit">Save</button>
+            </form>
+
+            <ul id="taskList"></ul>
+        </div>
+    </body>
+    <script>
+        let formElement = document.querySelector("form");
+
+        let myTextinput = document.querySelector("#taskInput");
+
+        let userTODoList = [];
+
+        let toastifyElement = document.querySelector(".toastify");
+
+        formElement.addEventListener(
+            "submit", //Form Submit Page reload
+            (e) => {
+                //e.target Form
+                e.preventDefault(); //Page reload stop
+                let textValue = e.target.userToDo.value;
+                let obj = {
+                    title: textValue,
+                    isStatus: true,
+                };
+
+                let CheckmyTitle = userTODoList.find(
+                    (obj) => obj.title == textValue,
+                );
+                if (CheckmyTitle) {
+                    toastifyElement.innerHTML = `Your Current Todo Already  Added <span>&times;</span>`;
+                    toastifyElement.style.background = "red";
+                    toastifyElement.classList.add("toastifyShow");
+                    // alert("Your Current Todo Already  Added")
+                } else {
+                    userTODoList.unshift(obj);
+                    toastifyElement.classList.add("toastifyShow");
+                    toastifyElement.style.background = "green";
+                    toastifyElement.innerHTML = `Your Item Added in Your list <span>&times;</span>`;
+
+                    showAllTodo();
+                    e.target.reset();
+                }
+
+                //   window.alert()
+                //   window.prompt()
+
+                window.setTimeout(() => {
+                    toastifyElement.classList.remove("toastifyShow");
+                }, 10000);
+            },
+        );
+
+        let ulElement = document.querySelector("#taskList");
+        let showAllTodo = () => {
+            let list = "";
+
+            userTODoList.forEach((obj, index) => {
+                list += `<li>  <b> ${index + 1} ${obj.title} </b>  <span data-id="${index}" >&times;</span> </li>`;
+            });
+
+            ulElement.innerHTML = list;
+        };
+
+        ulElement.addEventListener("click", (e) => {
+            if (e.target.tagName == "SPAN") {
+                //True -> span click
+                // e.target  span
+
+                if (confirm("Are sure want to delete?")) {
+                    //<span data-id="0" data-name="pradeep">&times;</span>
+                    let currentIndex = e.target.getAttribute("data-id");
+                    userTODoList.splice(currentIndex, 1);
+                    showAllTodo();
+                }
+            }
+        });
+
+        //Map()
+        //Filter()
+        //find()
+        //ForEach()
+
+        // let l=[
+        //     {
+        //         title:"HTML",
+        //         isStatus:true
+        //     },
+        //     {
+        //         title:"JS",
+        //         isStatus:true
+        //     },
+        //     {
+        //         title:"CSS",
+        //         isStatus:true
+        //     }
+        // ]
+
+        // let newArray=l.filter((obj,index)=>index!=1)
+        // console.log(newArray);
+
+        //  l.splice(0,2)
+
+        //  console.log(l);
+
+        // let list=''
+        //  l.forEach(
+        //         (obj,index)=>{
+        //             list+=`<li> ${obj.title} </li>`
+        //         }
+        //     )
+
+        //  ulElement.innerHTML= list
+        // console.log(list);
+
+        // let myTitle="JS"
+        // let CheckmyTitle=l.find((value)=>value.title==myTitle) //undefined
+
+        // if(CheckmyTitle){
+        //     console.log("Data Found");
+
+        // }
+        // else{
+        //     console.log("my title not Exist");
+
+        // }
+
+        //Filter() ->Array
+        //Find() -> {  title:"HTML",isStatus:true  }
+    </script>
+</html>

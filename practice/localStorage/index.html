@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+                text-decoration: none;
+                list-style: none;
+                font-family: Arial, Helvetica, sans-serif;
+            }
+
+            body {
+                background-color: #ccc;
+            }
+
+            .conatiner {
+                margin: 60px auto;
+                background-color: #fff;
+                width: 350px;
+                padding: 10px;
+            }
+
+            .input-item {
+                margin-bottom: 10px;
+                display: flex;
+                gap: 10px;
+                align-items: center;
+            }
+
+            .input-item input {
+                flex: 1;
+                padding: 4px;
+            }
+
+            .btn {
+                margin-top: 20px;
+                display: flex;
+                justify-content: center;
+            }
+
+            .btn button {
+                padding: 5px 12px;
+                cursor: pointer;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="conatiner">
+            <form autocomplete="off">
+                <div class="input-item">
+                    <label for="name">Name:</label>
+                    <input
+                        type="text"
+                        name="name"
+                        id="name"
+                        placeholder="Enter your name"
+                        required
+                    />
+                </div>
+                <div class="input-item">
+                    <label for="email">Email:</label>
+                    <input
+                        type="email"
+                        name="email"
+                        id="email"
+                        placeholder="Enter your email"
+                        required
+                    />
+                </div>
+                <div class="input-item">
+                    <label for="">Gender:</label>
+                    <input
+                        type="radio"
+                        name="gender"
+                        id="male"
+                        value="male"
+                        required
+                    /><label for="male">Male</label>
+                    <input
+                        type="radio"
+                        name="gender"
+                        id="female"
+                        value="female"
+                        required
+                    /><label for="female">Female</label>
+                </div>
+                <div class="btn">
+                    <button type="submit">Submit</button>
+                </div>
+            </form>
+
+            <table border="1" style="margin-top: 10px">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Gender</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                </tbody>
+            </table>
+        </div>
+
+        <script>
+            const formEl = document.querySelector("form");
+
+            let data = JSON.parse(localStorage.getItem("student-data")) || [];
+
+            // if (JSON.parse(localStorage.getItem("student-data"))) {
+            //     data = JSON.parse(localStorage.getItem("student-data"));
+            // } else {
+            //     data = [];
+            // }
+
+            function diplayData(){
+                let str=""
+                let count=1
+
+                data.forEach(el => {
+                    str+=`<tr>
+                        <td>${count++}</td>
+                        <td>${el.name}</td>
+                        <td>${el.email}</td>
+                        <td>${el.gender}</td>
+                    </tr>`
+                });
+
+                document.querySelector("tbody").innerHTML = str;
+            }
+            
+
+            formEl.addEventListener("submit", (e) => {
+                e.preventDefault();
+
+                const obj = {
+                    name: e.target.name.value,
+                    email: e.target.email.value,
+                    gender: e.target.gender.value,
+                };
+
+                data.push(obj);
+
+                localStorage.setItem("student-data", JSON.stringify(data));
+
+                diplayData()
+
+                // data.push(obj);
+
+                formEl.reset();
+            });
+
+            diplayData()
+        </script>
+    </body>
+</html>

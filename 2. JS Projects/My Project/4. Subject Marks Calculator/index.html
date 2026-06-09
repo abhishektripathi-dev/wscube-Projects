@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Marks Dashboard</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+
+    <body>
+        <div class="container">
+            <h1>Student Marks Calculator</h1>
+
+            <div class="form">
+                <div class="row">
+                    <label>Maths</label>
+                    <input type="number" id="maths" />
+                </div>
+
+                <div class="row">
+                    <label>Science</label>
+                    <input type="number" id="science" />
+                </div>
+
+                <div class="row">
+                    <label>English</label>
+                    <input type="number" id="english" />
+                </div>
+
+                <div class="row">
+                    <label>Hindi</label>
+                    <input type="number" id="hindi" />
+                </div>
+
+                <div class="row">
+                    <label>S.St</label>
+                    <input type="number" id="sst" />
+                </div>
+
+                <button onclick="calculate()">Calculate Result</button>
+            </div>
+
+            <div class="result">
+                <p>Total: <span id="total">0</span> / 500</p>
+
+                <p>Percentage: <span id="percentage">0%</span></p>
+
+                <div class="progress">
+                    <div id="bar"></div>
+                </div>
+
+                <p>Division: <span id="division"></span></p>
+
+                <p class="grade" id="grade"></p>
+            </div>
+        </div>
+
+        <script src="script.js"></script>
+    </body>
+</html>

@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Product Listing Layout</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    <body>
+        <div class="container">
+            <header class="topbar">
+                <div class="brand">Urban Shelf</div>
+                <nav class="menu">
+                    <span>Home</span>
+                    <span>Collections</span>
+                    <span>Shop</span>
+                    <span>Offers</span>
+                    <span>Contact</span>
+                </nav>
+            </header>
+
+            <div class="section-head">
+                <div>
+                    <h2>Trending Products</h2>
+                    <p>Hand-picked cards for a product listing style layout.</p>
+                </div>
+            </div>
+
+            <div class="productOuter">
+                <aside>
+                    <h3>Category</h3>
+                    <ul></ul>
+                </aside>
+                <div style="position: relative">
+                    <img
+                        class="loading"
+                        src="https://sibeeshpassion.com/wp-content/uploads/2015/07/loadinggif.gif"
+                        alt=""
+                    />
+                    <section class="product-grid"></section>
+
+                    <button class="buy-btn" id="loadBTn">Load More</button>
+                </div>
+            </div>
+        </div>
+    </body>
+    <script>
+        let slug; //undefined
+
+        let limit = 12;
+
+        let finalTotalProduct = 50;
+
+        let productDiv = document.querySelector(".product-grid");
+
+        let productOuterUL = document.querySelector(".productOuter aside ul");
+        let loadingElement = document.querySelector(".loading");
+        let getCategory = async () => {
+            let apiRes = await fetch(
+                `https://dummyjson.com/products/categories`,
+            );
+            let data = await apiRes.json(); //Array=[ 24 Item ]
+            let catItem = "";
+            data.forEach((obj) => {
+                catItem += `<li   class="${obj.slug == slug ? "activeCategory" : ""}"  data-slug="${obj.slug}"> ${obj.name} </li>`;
+            });
+            productOuterUL.innerHTML = catItem;
+
+            console.log(data);
+        };
+
+        let getProduct = async () => {
+            //Get Function
+
+            loadingElement.style.display = "block"; //Load Show
+
+            let apiUrl;
+            if (slug) {
+                //furniture
+                apiUrl = `https://dummyjson.com/products/category/${slug}`;
+            } else {
+                apiUrl = `https://dummyjson.com/products?limit=${limit}`;
+            }
+
+            //https://dummyjson.com/products api Url Promise ->api url se data
+            let data = await fetch(apiUrl); //Data api data json()
+            let finalData = await data.json(); //Api Data ->Object
+            let { products } = finalData;
+            //Array ->forEach
+            let cardItem = "";
+
+            products.forEach((obj) => {
+                // console.log(obj);
+                let { title, description, category, price, thumbnail } = obj;
+                cardItem += `<article class="card">
+                <div class="card-visual">
+                    <span class="badge">Best Seller</span>
+                    <img src="${thumbnail}" width="100%" />
+                </div>
+                <div class="card-body">
+                    <div class="category">${category}</div>
+                    <h3>${title}</h3>
+                    <p>Double-wall insulated bottle with a sleek premium finish and smart temperature style.</p>
+                    <div class="price-row">
+                        <div class="price">$${price}</div>
+                        <button class="buy-btn">Buy Now</button>
+                    </div>
+                </div>
+            </article>`;
+            });
+
+            productDiv.innerHTML = cardItem;
+
+            loadingElement.style.display = "none"; //Hide
+
+            // console.log(cardItem);
+        };
+
+        getProduct();
+
+        getCategory();
+
+        productOuterUL.addEventListener("click", (e) => {
+            if (e.target.tagName == "LI") {
+                slug = e.target.getAttribute("data-slug"); //furniture
+                getProduct();
+                getCategory();
+            }
+        });
+
+        let loadBTn = document.querySelector("#loadBTn");
+
+        loadBTn.addEventListener("click", () => {
+            limit = limit + 12;
+            getProduct();
+            // window.scrollTo(
+            //     {
+            //         behavior:"smooth",
+            //         top:"0"
+            //     }
+            // )
+        });
+
+        // let divHeight=1000
+
+        // window.addEventListener(
+        //     "scroll",()=>{
+        //        if(window.scrollY>divHeight){
+        //              limit=limit+12 //24
+        //              getProduct()
+        //              divHeight=divHeight+window.scrollY
+        //        }
+        //     }
+        // )
+    </script>
+</html>

@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Mega Menu</title>
+
+        <style>
+            /* RESET */
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            /* NAVBAR */
+            .navbar {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                background: #111;
+                color: #fff;
+                padding: 15px 20px;
+                font-family: Arial;
+            }
+
+            .logo {
+                font-size: 20px;
+                font-weight: bold;
+            }
+
+            /* MENU */
+            .menu {
+                list-style: none;
+                display: flex;
+                gap: 25px;
+            }
+
+            .menu li {
+                position: relative;
+            }
+
+            .menu a,
+            .mega-trigger {
+                color: #fff;
+                text-decoration: none;
+                padding: 8px;
+                background: none;
+                border: none;
+                cursor: pointer;
+                font-size: 15px;
+            }
+
+            /* MEGA MENU */
+            .mega-menu {
+                position: absolute;
+                left: 0;
+                top: 120%;
+                width: 100vw;
+                background: #fff;
+                color: #000;
+
+                opacity: 0;
+                visibility: hidden;
+                transform: translateY(15px);
+                transition: all 0.3s ease;
+
+                box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+            }
+
+            /* ACTIVE */
+            .mega.active .mega-menu {
+                opacity: 1;
+                visibility: visible;
+                transform: translateY(0);
+            }
+
+            /* GRID */
+            .mega-container {
+                max-width: 1200px;
+                margin: auto;
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                gap: 30px;
+                padding: 30px;
+            }
+
+            .mega-column h4 {
+                margin-bottom: 10px;
+            }
+
+            .mega-column a {
+                display: block;
+                padding: 6px 0;
+                color: #555;
+            }
+
+            .mega-column a:hover {
+                color: #000;
+            }
+
+            /* HAMBURGER */
+            .hamburger {
+                display: none;
+                font-size: 22px;
+                background: none;
+                border: none;
+                color: #fff;
+                cursor: pointer;
+            }
+
+            /* MOBILE */
+            @media (max-width: 768px) {
+                .hamburger {
+                    display: block;
+                }
+
+                .menu {
+                    position: absolute;
+                    top: 60px;
+                    left: 0;
+                    width: 100%;
+                    background: #111;
+                    flex-direction: column;
+                    display: none;
+                }
+
+                .menu.active {
+                    display: flex;
+                }
+
+                .menu li {
+                    width: 100%;
+                    border-bottom: 1px solid #222;
+                }
+
+                .mega-menu {
+                    position: static;
+                    width: 100%;
+                    display: none;
+                    opacity: 1;
+                    visibility: visible;
+                    transform: none;
+                    background: #222;
+                    color: #fff;
+                }
+
+                .mega.active .mega-menu {
+                    display: block;
+                }
+
+                .mega-container {
+                    display: block;
+                    padding: 15px;
+                }
+
+                .mega-column {
+                    margin-bottom: 15px;
+                }
+
+                .mega-column a {
+                    color: #ccc;
+                }
+            }
+        </style>
+    </head>
+
+    <body>
+        <nav class="navbar">
+            <div class="logo">MyStore</div>
+
+            <button class="hamburger" id="hamburger">☰</button>
+
+            <ul class="menu" id="menu">
+                <li><a href="#">Home</a></li>
+
+                <li class="mega" id="mega">
+                    <button class="mega-trigger" id="megaTrigger">
+                        Categories ▾
+                    </button>
+
+                    <div class="mega-menu" id="megaMenu">
+                        <div class="mega-container">
+                            <div class="mega-column">
+                                <h4>Electronics</h4>
+                                <a href="#">Mobiles</a>
+                                <a href="#">Laptops</a>
+                                <a href="#">Headphones</a>
+                            </div>
+
+                            <div class="mega-column">
+                                <h4>Fashion</h4>
+                                <a href="#">Men</a>
+                                <a href="#">Women</a>
+                                <a href="#">Kids</a>
+                            </div>
+
+                            <div class="mega-column">
+                                <h4>Home</h4>
+                                <a href="#">Furniture</a>
+                                <a href="#">Decor</a>
+                                <a href="#">Kitchen</a>
+                            </div>
+
+                            <div class="mega-column">
+                                <h4>Appliances</h4>
+                                <a href="#">AC</a>
+                                <a href="#">Fridge</a>
+                                <a href="#">Washing Machine</a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+
+                <li><a href="#">Deals</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+
+        <script>
+            // ELEMENTS
+            const hamburger = document.getElementById("hamburger");
+            const menu = document.getElementById("menu");
+            const mega = document.getElementById("mega");
+            const megaTrigger = document.getElementById("megaTrigger");
+
+            // TOGGLE MOBILE MENU
+            hamburger.addEventListener("click", () => {
+                menu.classList.toggle("active");
+            });
+
+            // TOGGLE MEGA MENU
+            megaTrigger.addEventListener("click", (e) => {
+                e.stopPropagation();
+                mega.classList.toggle("active");
+            });
+
+            // CLOSE WHEN CLICK OUTSIDE
+            document.addEventListener("click", (e) => {
+                if (!mega.contains(e.target)) {
+                    mega.classList.remove("active");
+                }
+            });
+
+            // ESC KEY CLOSE
+            document.addEventListener("keydown", (e) => {
+                if (e.key === "Escape") {
+                    mega.classList.remove("active");
+                    menu.classList.remove("active");
+                }
+            });
+        </script>
+    </body>
+</html>

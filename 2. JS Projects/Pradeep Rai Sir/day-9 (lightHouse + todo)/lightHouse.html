@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            * {
+                margin: 0px;
+                padding: 0px;
+                font-family: sans-serif;
+            }
+            .main {
+                width: 1320px;
+
+                margin: auto;
+                border: 1px solid #ccc;
+                display: grid;
+                gap: 20px;
+                grid-template-columns: repeat(4, 1fr);
+            }
+            .mainItem img {
+                width: 100%;
+                display: block;
+            }
+
+            .lightBoxOverLay {
+                width: 100%;
+                height: 100%;
+                position: fixed;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                transition: 0.5s;
+                background-color: rgba(0, 0, 0, 0.5);
+                transform: scale(0);
+            }
+
+            .lightBoxMid {
+                width: 800px;
+                position: relative;
+            }
+            .lightBoxMid img {
+                width: 100%;
+            }
+            .lightBoxMid span {
+                position: absolute;
+                right: 0px;
+                font-size: 40px;
+                background-color: red;
+                cursor: pointer;
+            }
+
+            .lightBoxOverOpen {
+                transform: scale(1);
+            }
+        </style>
+    </head>
+    <body>
+        <div class="lightBoxOverLay">
+            <div class="lightBoxMid">
+                <span>&times;</span>
+                <img src="" alt="" />
+            </div>
+        </div>
+
+        <div class="main">
+            <div class="mainItem">
+                <img
+                    src="https://uptownskylla.in/wp-content/uploads/2019/10/05-Contener-No-3rd-06.jpg"
+                    alt=""
+                />
+            </div>
+            <div class="mainItem">
+                <img
+                    src="https://uptownskylla.in/wp-content/uploads/2019/10/05-Contener-No-3rd-08.jpg"
+                    alt=""
+                />
+            </div>
+            <div class="mainItem">
+                <img
+                    src="https://uptownskylla.in/wp-content/uploads/2019/10/05-Contener-No-3rd-10.jpg"
+                    alt=""
+                />
+            </div>
+            <div class="mainItem">
+                <img
+                    src="https://uptownskylla.in/wp-content/uploads/2019/10/05-Contener-No-3rd-08.jpg"
+                    alt=""
+                />
+            </div>
+            <div class="mainItem">
+                <img
+                    src="https://uptownskylla.in/wp-content/uploads/2019/10/05-Contener-No-3rd-10.jpg"
+                    alt=""
+                />
+            </div>
+            <div class="mainItem">
+                <img
+                    src="https://uptownskylla.in/wp-content/uploads/2019/10/05-Contener-No-3rd-08.jpg"
+                    alt=""
+                />
+            </div>
+            <div class="mainItem">
+                <img
+                    src="https://uptownskylla.in/wp-content/uploads/2019/10/05-Contener-No-3rd-06.jpg"
+                    alt=""
+                />
+            </div>
+            <div class="mainItem">
+                <img
+                    src="https://uptownskylla.in/wp-content/uploads/2019/10/05-Contener-No-3rd-08.jpg"
+                    alt=""
+                />
+            </div>
+        </div>
+    </body>
+    <script>
+        let mainElement = document.querySelector(".main");
+        let btn = document.querySelector(".main button");
+
+        let lightBoxOverLayElement = document.querySelector(".lightBoxOverLay"); //lightBoxOverLay
+        let lightBoxMidClose = document.querySelector(".lightBoxMid span"); //Close BTN
+        let lightBoxMidIMG = document.querySelector(".lightBoxMid img"); //Main Img tag
+
+        lightBoxMidClose.addEventListener("click", () => {
+            lightBoxOverLayElement.classList.remove("lightBoxOverOpen");
+        });
+
+        mainElement.addEventListener("click", (e) => {
+            //  <img src="https://uptownskylla.in/wp-content/uploads/2019/10/05-Contener-No-3rd-08.jpg" alt="">
+            // console.log(e.target.src);
+            let clickedSrc = e.target.src;
+            if (clickedSrc) {
+                lightBoxOverLayElement.classList.add("lightBoxOverOpen"); //Open
+                // <img src="https://uptownskylla.in/wp-content/uploads/2019/10/05-Contener-No-3rd-06.jpg" alt="">
+                lightBoxMidIMG.src = clickedSrc; //lightBox Img tag src change
+                // <img src="https://uptownskylla.in/wp-content/uploads/2019/10/05-Contener-No-3rd-10.jpg" alt="">
+            }
+            //https://uptownskylla.in/wp-content/uploads/2019/10/05-Contener-No-3rd-08.jpg
+
+            // e.target.style.color="red";
+        });
+
+        // btn.addEventListener(
+        //     "click",
+        //     (e)=>{
+        //          e.stopPropagation() //Parent Event Cancel
+        //          alert("BTN Click")
+        //     }
+        // )
+    </script>
+</html>

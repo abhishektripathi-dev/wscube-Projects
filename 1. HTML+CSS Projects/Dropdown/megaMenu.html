@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Mega Menu</title>
+        <!-- <link rel="stylesheet" href="styles.css" /> -->
+        <style>
+            /* Reset */
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            /* Navbar */
+            .navbar {
+                background: #111;
+                color: #fff;
+                display: flex;
+                justify-content: space-between;
+                padding: 0px 40px;
+                align-items: center;
+                font-family: Arial, sans-serif;
+                position: relative;
+            }
+
+            .logo {
+                font-size: 20px;
+                font-weight: bold;
+            }
+
+            .menu {
+                list-style: none;
+                display: flex;
+                gap: 30px;
+            }
+
+            .menu-item {
+                /* position: relative; */
+                border: 1px solid #fff;
+                padding: 15px 0;
+            }
+
+            .menu-item a {
+                color: #fff;
+                text-decoration: none;
+                padding: 8px;
+                display: inline-block;
+            }
+
+            /* Mega Menu */
+            .mega-menu {
+                position: absolute;
+                left: 0;
+                top: 100%;
+                width: 100vw;
+                background: #fff;
+                color: #000;
+
+                opacity: 0;
+                visibility: hidden;
+                transform: translateY(15px);
+                transition: all 0.3s ease;
+
+                box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+            }
+
+            /* Inner container */
+            .mega-container {
+                max-width: 1200px;
+                margin: auto;
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                gap: 30px;
+                padding: 30px;
+            }
+
+            /* Columns */
+            .mega-column h4 {
+                margin-bottom: 10px;
+                font-size: 16px;
+                color: #111;
+            }
+
+            .mega-column a {
+                display: block;
+                padding: 6px 0;
+                color: #555;
+                text-decoration: none;
+                font-size: 14px;
+            }
+
+            .mega-column a:hover {
+                color: #000;
+            }
+
+            /* Show Mega Menu */
+            .mega:hover .mega-menu,
+            .mega:focus-within .mega-menu {
+                opacity: 1;
+                visibility: visible;
+                transform: translateY(0);
+            }
+        </style>
+    </head>
+    <body>
+        <nav class="navbar">
+            <div class="logo">MyStore</div>
+
+            <ul class="menu">
+                <li class="menu-item">
+                    <a href="#">Home</a>
+                </li>
+
+                <li class="menu-item mega">
+                    <a href="#">Categories ▾</a>
+
+                    <!-- Mega Menu -->
+                    <div class="mega-menu">
+                        <div class="mega-container">
+                            <div class="mega-column">
+                                <h4>Electronics</h4>
+                                <a href="#">Mobiles</a>
+                                <a href="#">Laptops</a>
+                                <a href="#">Headphones</a>
+                                <a href="#">Smart Watches</a>
+                            </div>
+
+                            <div class="mega-column">
+                                <h4>Fashion</h4>
+                                <a href="#">Men</a>
+                                <a href="#">Women</a>
+                                <a href="#">Kids</a>
+                                <a href="#">Footwear</a>
+                            </div>
+
+                            <div class="mega-column">
+                                <h4>Home</h4>
+                                <a href="#">Furniture</a>
+                                <a href="#">Decor</a>
+                                <a href="#">Kitchen</a>
+                                <a href="#">Lighting</a>
+                            </div>
+
+                            <div class="mega-column">
+                                <h4>Appliances</h4>
+                                <a href="#">AC</a>
+                                <a href="#">Refrigerator</a>
+                                <a href="#">Washing Machine</a>
+                                <a href="#">Microwave</a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+
+                <li class="menu-item">
+                    <a href="#">Deals</a>
+                </li>
+
+                <li class="menu-item">
+                    <a href="#">Contact</a>
+                </li>
+            </ul>
+        </nav>
+    </body>
+</html>

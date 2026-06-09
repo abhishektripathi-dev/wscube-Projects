@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Movie App</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <!-- HEADER -->
+        <header>
+            <div class="logo">
+                <span></span>
+                MovieBox
+            </div>
+            <nav>
+                <a href="#">Home</a>
+                <a href="#">Popular</a>
+                <a href="#">Top Rated</a>
+                <a href="#">Upcoming</a>
+            </nav>
+        </header>
+
+        <!-- PAGE CONTENT -->
+        <main class="page">
+            <!-- SIDEBAR -->
+            <aside class="sidebar">
+                <h3>Search</h3>
+                <div class="search-box">
+                    <input type="text" placeholder="Search for a movie..." />
+                    <span>⌕</span>
+                </div>
+            </aside>
+
+            <!-- MAIN CONTENT -->
+            <section class="content">
+                <!-- Featured movie -->
+
+                <!-- Movie grid -->
+                <div class="section-header">
+                    <h2>Popular Movies</h2>
+                    <span>Showing 1 results</span>
+                </div>
+
+                <section class="movies-grid">
+                    <!-- Card 1 -->
+                </section>
+
+                <div>
+                    <button onclick="preMobvieData()">Prev</button>
+                    <button onclick="nextMobvieData()">Next</button>
+                </div>
+            </section>
+        </main>
+    </body>
+    <script src="app.js"></script>
+</html>

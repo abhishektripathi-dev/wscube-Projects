@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+            font-family: sans-serif;
+        }
+        .main{
+            width: 1000px;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <h1>1Welcome to Ws</h1>  <!--0-->
+        <h1>2Welcome to Ws</h1>  
+        <button>Save</button>  <!--1-->
+        <p>  <!--2-->
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem hic quia perferendis, veniam exercitationem minus cumque eaque! Mollitia assumenda soluta minus laborum est delectus, cum cumque tempore voluptate porro reprehenderit.
+        </p>
+    </div>
+</body>
+<script>
+
+    let btn=document.querySelector("button")
+    console.log(btn.previousElementSibling);
+    //    <h1>2Welcome to Ws</h1>  
+       console.log(btn.previousElementSibling.previousElementSibling);
+    // <h1>1Welcome to Ws</h1>
+    let mainElement=document.querySelector(".main")
+
+    console.log(btn.nextElementSibling);
+    //p
+    
+
+    // console.log(mainElement.children[1].previousElementSibling);
+    // // <h1>2Welcome to Ws</h1>  
+    // //<button>Save</button> 
+    // console.log(mainElement.children[1].previousElementSibling.previousElementSibling);
+    // // <h1>1Welcome to Ws</h1> 
+
+
+    // console.log(mainElement.firstElementChild);
+
+    // console.log(mainElement.lastElementChild);
+
+    // <h1>Welcome to Ws</h1>
+    
+
+    // for(let element of mainElement.children){
+    //     console.log(element);
+        
+    // }
+    
+    //  console.log(mainElement.children[0].innerHTML);
+
+
+    //  console.log(mainElement.children[1]);
+
+    //     console.log(mainElement.children[2]);
+</script>
+</html>

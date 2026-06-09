@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body></body>
+    <script>
+        // console.log("task 1");
+
+        // setTimeout(()=>{
+        //      console.log("task 2")
+        // },1000)
+
+        // console.log("task 3")
+
+        //Promise--  API
+        //Promise --- DataBase
+        //Promise --- File Handling
+        //Promise --- API
+
+        //Promise --- Fullfilled
+        //Promise --- Rejected
+        //Promise --- Pending
+        let loginStatus = false;
+
+        let loginPromise = new Promise((resolve, reject) => {
+            if (loginStatus) {
+                resolve({ status: true, message: "Login Done" });
+            } else {
+                reject({
+                    status: false,
+                    message: "Invalid username or Password",
+                });
+            }
+        });
+
+        let checkLogin = async () => {
+            try {
+                let data = await loginPromise; //Success // Fullfilled
+                console.log(data);
+            } catch (err) {
+                console.log(err);
+            }
+        };
+
+        checkLogin();
+
+        loginPromise
+            .then((apiSuccessRes) => {
+                console.log(apiSuccessRes);
+            })
+            .catch((error) => {
+                console.log(error);
+            });
+
+        // console.log(loginPromise);
+
+        //Method 1 then or catch
+
+        //Promise Data Get then() method catch()
+    </script>
+</html>
